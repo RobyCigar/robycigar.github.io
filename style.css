@@ -1,0 +1,49 @@
+.cat {
+	position: fixed;
+	padding: 50px 90px 100vh 20px;
+	background-color: white;
+}
+
+.fiks {
+
+}
+
+.flex {
+	display: flex;
+}
+
+.fled {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	position: relative;
+	left: 20px;
+}
+
+.left {
+	margin-left: 20%;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.pagination {
+	position: absolute;
+	top: 300%;
+	right: 5%;
+}
