@@ -1,160 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		* {
+			font-family: sans-serif;
+		}
 
-body {
-	background-color: black;
-	color: white;
-	font-size: 24px;
-	font-family: monospace;
-}
+		body {
+			background: black;
+			color: white;
+		}
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+		a {
+			color: white;
+		}
 
-.table {
-	width: 80%;
-	margin: auto;
-	margin-bottom: 70px;
-}
-
-h2 {
-	text-align: center;
-}
-
-td, th {
-  border: 5px solid red;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #FFFFFF33;
-}
-
-h5 {
-	text-align: center;
-	cursor: pointer;
-	border: 1px solid red;
-	padding: 3px 5px;
-	width: 300px;
-}
-
-h5:hover {
-	background-color: red;
-}
-
-@media only screen and (max-width: 600px)  {
-	body {
-		font-size: 12px;
-	}
-}
-
-</style>
+		li {
+			margin: 30px;
+		}
+	</style>
+	<title>Halaman Navigasi</title>
 </head>
 <body>
-
-<h2>Tabel HTML</h2>
-
-<h5 onclick="dark()">Nama : Rabih Utomo <br> NIM : 20.02.0607</h5><span> &nbsp ⬆️ click please</span>
-
-<table class="table">
-  <tr>
-    <th>Nama</th>
-    <th>Orang Tua</th>
-    <th>Negara</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-
-</table>
-
-<script type="text/javascript">
-	
-	function dark() {
-		const body = document.body.style
-		console.log(body)
-		if(body.backgroundColor === 'white') {
-			console.log('hereree')
-			body.backgroundColor = 'black'
-			body.color = 'white'
-		} else {
-			body.backgroundColor = 'white'
-			body.color = 'black'
-		}
-	}
-</script>
-
+	<h1 style="text-align: center">Mata Kuliah Web Programming</h1>
+	<div style="width: 20%; margin: auto">
+		<ul>
+			<li><a href="/perkenalan">Perkenalan</a></li>
+			<li><a href="/table">Tabel</a></li>
+			<li><a href="https://github.com/RobyCigar/" target="_blank">My Github</a></li>
+		</ul>
+	</div>
 </body>
 </html>
