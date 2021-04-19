@@ -1,200 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	text-decoration: none;
-	list-style: none;
-	list-style-type: none;
+	font-family: "Poppins", sans-serif;
+	overflow: hidden;
 }
 
-.navbar {
-
-}
-
-.flex-nav {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0px 20px 0px 20px;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.flex-nav > div {
-	font-family: quicksand, sans-serif;
-	font-weight: 900;
-	font-size: 30px;
-	color: #4964F2;
-}
-
-.flex-nav > li {
-	font-family: roboto, sans-serif;
-	padding: 20px;
-}
-
-.logo {
-	display: block;
-	font-size: 24px;
-
-}
-
-.search-btn {
-	padding: 10px 20px 10px 20px;
-	font-family: roboto, sans-serif;
-	font-weight: 800;
-	background-color: white;
-	border-radius: 10px;
-	border: none;
-	cursor: pointer;
-	margin-left: 15px;
-	color: #4964F2;
-	transition: 0.3s;
-}
-
-.search {
-	padding: 10px;
-}
-
-.search-btn:hover {
-	box-shadow: 0px 0px 10px gray;
-	font-size: 17px;
-}
-
-.back-1 {
+.text {
 	position: absolute;
-	top: -100px;
-	left: 0;
-	width: 1440px;
-	height: 850px;
-	z-index: -10;
-}
-
-/* section */
-
-.section-1 {
-	display: flex;
-	flex-direction: column;
-}
-
-.title {
-	position: relative !important;
-	margin: 9rem 0 7rem 5rem;
-	font-size: 72px;
-	font-family: roboto, sans-serif;
-}
-
-.join {
-	display: flex;
-	margin: 0 0 0 5rem;
-	z-index: 10;
-}
-
-.join > div {
-	margin-top: 15px;
-	font-family: roboto, sans-serif;
-	font-size: 24px;
-	font-weight: normal;
-	transition: 0.8s;
-}
-
-.join > div:hover {
-	transform: rotate(360deg);
-}
-
-.sign-up {
-	padding: 20px 40px 20px 40px;
-	margin-right: 60px;
-	cursor: pointer;
-	border: none;
-	border-radius: 8px;
-	font-family: roboto, sans-serif;
-	font-weight: 800;
-	font-size: 18px;
-	transition: 0.4s;
-	background-color: #8994C6;
-	box-shadow: 0 0 10px #775B5B;
-	color: #101010;
-}
-
-.sign-up:hover {
-	box-shadow: none;
-}
-
-.sign-in {
-	padding: 20px 40px 20px 40px;
-	margin-left: 60px;
-	cursor: pointer;
-	border: none;
-	border-radius: 8px;
-	font-size: 18px;
-	font-family: roboto, sans-serif;
-	font-weight: 800;
-	transition: 0.4s;
-	background-color: #8994C6;
-	box-shadow: 0 0 10px #775B5B;
-	color: #101010;
-}
-
-.sign-in:hover {
-	box-shadow: none;
-}
-
-/*section 2*/
-
-.back-2 {
-	position: relative;
-	z-index: -1000;
-}
-
-.description {
-	position: relative;
-	top: -30rem;
-	text-align: left;
-	right: -44rem;
-	font-weight: 400;
-	padding: 0;
-	margin-right: 30px;
-	font-size: 36px;
-	font-family: roboto, sans-serif;
-}
-
-.start-btn {
-	position: relative;
-	top: -20rem;
-	right: -45rem;
-	border: 0;
-	cursor: pointer;
-	padding: 15px ;
-	border-radius: 8px;
-	font-family: roboto, sans-serif;
-	font-weight: 800;
-	font-size: 18px;
-	transition: 0.4s;
-	background-color: #8994C6;
-	box-shadow: 0 0 10px #775B5B;
-	color: white;
-}
-
-.start-btn:hover {
-	box-shadow: none;
-}
-
-.flex-items {
-	background-image: linear-gradient(transparent, #CACACA55, #CACACA66);
-	padding-bottom: 100px;
-}
-
-.img-3 {
-	position: relative;
 	left: 50%;
-	transform: translate(-50%);
-	z-index: -300;
-
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	     -o-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	z-index: 100;
+	color: white;
+	box-shadow: 0 4px 10px #00000088;
+	background: #00000099;
+	padding: 90px 70px;
+	border-radius: 10px;
 }
 
-.last-description {
-	position: relative;
-	top: -5rem;
-	font-size: 26px;
-	text-align: center;
-	font-family: quicksand, sans-serif;
+.text > h1 {
+	text-transform: uppercase;
+}
+
+.ul {
+	margin: 10px 0;
+	text-align: left;
+}
+
+a {
+	color: #9999FF;
+}
+
+#particles-js {
+	background-color: rgb(182, 25, 36);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	min-width: 700px;
+	width: 100vw;
+	height: 100vh;
+}
+
+
+/* Shit below */
+
+@media only screen and (max-width: 400px) {
+	.text {
+		height: 100vh;
+		width: 100vw;
+		border-radius: 0;
+	}
 }
