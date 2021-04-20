@@ -13,18 +13,30 @@
 		}
 
 		div {
+			position: absolute;
+			left: 50%;
 			text-align: center;
+			animation: bounce 1s infinite;
+		}
+
+		@keyframes bounce {
+			0% {
+				left: 10%;
+			} 
+			100% {
+				right: 10%;
+			}
 		}
 	</style>
 	<title>Document</title>
 </head>
 <body style="background: black; color: white">
 	<h5>⬅️<a href="/"> Kembali</a></h5>
-	<div>
+	<marquee>
 		<h1>Nama : Rabih Utomo</h1>
 		<h1>NIM : 20.02.0607 </h1>
 		<h1>Jurusan : MI 02</h1>
 		<h1>Kampus: Amikom</h1>
-	</div>
+	</marquee>
 </body>
 </html>
