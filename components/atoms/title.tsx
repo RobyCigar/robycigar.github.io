@@ -3,9 +3,9 @@ import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
 function Title({
-    title,
-    variants
-}: { title: String, variants?: Variants }) {
+    variants,
+    children
+}: { variants?: Variants, children: React.ReactNode }) {
   const textVariants = variants ?? {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -33,7 +33,7 @@ function Title({
       variants={textVariants}
       className={`mb-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white ${colorGradient["toPink"]} `}
     >
-      {title}
+      {children}
     </motion.h1>
   );
 }
