@@ -1,17 +1,21 @@
 "use client"
+import { useTranslation } from '@/app/i18n';
+import useLocalStorage from '@/utils/useLocalStorage';
 import Link from 'next/link';
-import React from 'react'
-import DarkModeToggle from "react-dark-mode-toggle";
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import React, { ReactElement, useEffect } from 'react'
+import LanguageDropdown from '../molecules/navbar/language-dropdown';
 
 interface MenuI {
     label: string,
     link: string,
     click?: () => void,
-    icon?: () => React.ReactNode
+    icon?: ReactElement
 }
 
 function Navbar() {
-    const [isDarkMode, setIsDarkMode] = React.useState(() => false);
+  const translation = useTranslation()
+  const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     const items: MenuI[] = [
       {
         label: "Home",
@@ -31,51 +35,38 @@ function Navbar() {
         click: () => {
           window.open("https://dev.to/robycigar");
         },
-        icon: () => (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-            />
-          </svg>
-        ),
+        icon: <ArrowTopRightOnSquareIcon className='h-4 w-4'/>,
       },
     ];
+    useEffect(() => {
+      if(dark) {
+        const root = document.documentElement;
+        root.classList.add("dark");
+      }
+    }, [dark])
     const onChangeDarkMode = () => {
         const root = document.documentElement;
         root.classList.toggle("dark");
-        setIsDarkMode(!isDarkMode)
+        setDark(!dark)
+    }
+    const handleChangeLanguage = (lang: string) => {
+      localStorage.setItem("lang", lang)
+      translation.setLanguage(lang)
+      translation.loadTranslation()
+      location.reload()
     }
   return (
     <>
-      <header className="fixed w-screen">
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
+      <header className="fixed z-10 w-screen">
+        <nav className="bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-center space-x-8">
-              <DarkModeToggle
+              <LanguageDropdown handleChange={handleChangeLanguage} />
+              {/* <DarkModeToggle
                 onChange={onChangeDarkMode}
-                checked={isDarkMode}
+                checked={dark}
                 size={70}
-              />
-              <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-800 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
-                    aria-current="page"
-                  >
-                    EN | ID
-                  </Link>
-                </li>
-              </ul>
+              /> */}
             </div>
             <div>
               <div className="flex items-center lg:order-2">
@@ -127,7 +118,7 @@ function Navbar() {
                         aria-current="page"
                       >
                         {it.label}
-                        {it.icon ? it.icon() : null }
+                        {it.icon ? it.icon : null}
                       </Link>
                     </li>
                   ))}

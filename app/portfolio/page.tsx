@@ -1,19 +1,20 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
 import Paragraph from "@/components/atoms/paragraph";
 import Container from "@/components/molecules/landing/container";
 import Header from "@/components/molecules/landing/header";
 import React from "react";
+import { useTranslation } from "../i18n";
 
 
 const Portfolio = () => {
+  const { t } = useTranslation()
   return (
     <Container>
       <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">
-        <Header>List of Portfolio</Header>
+        <Header>{t.list_of_portfolio}</Header>
         <Paragraph>
-          A curated list of the notable work I have accomplished during my
-          programming career. provides a comprehensive overview of my skills,
-          expertise, and achievements.
+          {t.portfolio_desc}
         </Paragraph>
       </div>
       <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
