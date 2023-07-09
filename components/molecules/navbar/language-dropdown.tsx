@@ -1,6 +1,6 @@
 "use client"
 import useClickOutside from '@/utils/useClickOutside';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 interface CountryOption {
@@ -22,13 +22,27 @@ const countries = [
   },
 ];
 
+interface StateI {
+  visible: boolean,
+  activeLanguage: any
+}
+ 
 function LanguageDropdown({ handleChange }: {
     handleChange: (label: string) => void
 }) {
-    const [state, setState] = useState({
+    const [state, setState] = useState<StateI>({
         visible: false,
-        activeLanguage: countries.find(it => it.value == localStorage.getItem("lang"))
+        activeLanguage: countries[1]
     })
+
+    useEffect(() => {
+      setState({
+        ...state,
+        activeLanguage: typeof window !== "undefined" ? countries.find(it => it.value == localStorage.getItem("lang")) : countries[1]
+      })
+    }, [])
+    
+
     const toggleVisible = () => {
         setState({...state, visible: !state.visible})
     }

@@ -43,7 +43,7 @@ function Navbar() {
         const root = document.documentElement;
         root.classList.add("dark");
       }
-    }, [dark])
+    })
     const onChangeDarkMode = () => {
         const root = document.documentElement;
         root.classList.toggle("dark");
