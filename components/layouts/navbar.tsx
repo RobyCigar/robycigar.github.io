@@ -18,7 +18,7 @@ function Navbar() {
   const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     const items: MenuI[] = [
       {
-        label: "Home",
+        label: "Me",
         link: "/",
       },
       {
@@ -26,8 +26,16 @@ function Navbar() {
         link: "/portfolio",
       },
       {
+        label: "Hobby",
+        link: "/hobby",
+      },
+      {
         label: "Friends",
         link: "/friends",
+      },
+      {
+        label: "Certification",
+        link: "/certification",
       },
       {
         label: "Blog",
@@ -35,7 +43,7 @@ function Navbar() {
         click: () => {
           window.open("https://dev.to/robycigar");
         },
-        icon: <ArrowTopRightOnSquareIcon className='h-4 w-4'/>,
+        icon: <ArrowTopRightOnSquareIcon className="h-4 w-4" />,
       },
     ];
     useEffect(() => {

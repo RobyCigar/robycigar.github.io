@@ -49,7 +49,7 @@ function Badge({
   ...props
 }: {
   children: React.ReactNode;
-  variant: Variants;
+  variant?: Variants;
   style: string,
   color?: "default" | "red" | "dark" | "yellow" | "indigo" | "purple" | "pink" | "green",
   border?: boolean,

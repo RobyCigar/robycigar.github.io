@@ -38,7 +38,7 @@ function LanguageDropdown({ handleChange }: {
     useEffect(() => {
       setState({
         ...state,
-        activeLanguage: typeof window !== "undefined" ? countries.find(it => it.value == localStorage.getItem("lang")) : countries[1]
+        activeLanguage: typeof window !== "undefined" ? (countries.find(it => it.value == localStorage.getItem("lang")) ?? countries[0]) : countries[0]
       })
     }, [])
     
