@@ -4,8 +4,13 @@ import { motion, Variants } from 'framer-motion'
 
 function Title({
     variants,
-    children
-}: { variants?: Variants, children: React.ReactNode }) {
+    children,
+    ...props
+}: { 
+  variants?: Variants, 
+  children: React.ReactNode, 
+  className?: string 
+}) {
   const textVariants = variants ?? {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -31,7 +36,7 @@ function Title({
       initial="hidden"
       animate="visible"
       variants={textVariants}
-      className={`mb-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white ${colorGradient["toPink"]} `}
+      className={`mb-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ${colorGradient["toPink"]} ${props.className} `}
     >
       {children}
     </motion.h1>
