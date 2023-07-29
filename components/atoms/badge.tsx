@@ -58,7 +58,7 @@ function Badge({
   [props: string]: any;
 }) {
   const classes = [
-    "border border-blue-200 inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 font-medium mr-2 px-2.5 py-0.5",
+    "border border-blue-200 inline-flex justify-between items-center py-1 px-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 font-medium px-2.5 py-0.5",
     style,
     getColor[color],
     border ? getBorder[color] : undefined,

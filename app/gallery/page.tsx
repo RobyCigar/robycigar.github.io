@@ -19,7 +19,7 @@ const Hobby = () => {
         <main className="grid grid-cols-6 gap-4">
           <div
             className="col-span-6 relative"
-            title="Shiey is a youtuber who inspired me to travel a lot"
+            title="Shiey is a man who inspired me to travel a lot"
           >
             <Badge style="absolute -top-2 -right-2 w-fit">
               <p>
@@ -30,7 +30,7 @@ const Hobby = () => {
                 >
                   Shiey
                 </a>{" "}
-                is a youtuber who inspired me to travel a lot
+                is a man who inspired me to travel a lot
               </p>
             </Badge>
             <iframe

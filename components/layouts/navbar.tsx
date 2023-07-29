@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import React, { ReactElement, useEffect } from 'react'
 import LanguageDropdown from '../molecules/navbar/language-dropdown';
+import { useRouter } from "next/navigation";
 
 interface MenuI {
     label: string,
@@ -15,6 +16,7 @@ interface MenuI {
 
 function Navbar() {
   const translation = useTranslation()
+  const router = useRouter()
   const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     const items: MenuI[] = [
       {
@@ -26,8 +28,8 @@ function Navbar() {
         link: "/portfolio",
       },
       {
-        label: "Hobby",
-        link: "/hobby",
+        label: "Gallery",
+        link: "/gallery",
       },
       {
         label: "Friends",
@@ -51,6 +53,8 @@ function Navbar() {
         const root = document.documentElement;
         root.classList.add("dark");
       }
+    console.log({ router });
+
     })
     const onChangeDarkMode = () => {
         const root = document.documentElement;
@@ -70,11 +74,6 @@ function Navbar() {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-center space-x-8">
               <LanguageDropdown handleChange={handleChangeLanguage} />
-              {/* <DarkModeToggle
-                onChange={onChangeDarkMode}
-                checked={dark}
-                size={70}
-              /> */}
             </div>
             <div>
               <div className="flex items-center lg:order-2">

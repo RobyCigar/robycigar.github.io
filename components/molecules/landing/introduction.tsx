@@ -46,11 +46,15 @@ function Introduction() {
   return (
     <section className="bg-white relative h-screen flex items-center dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <Badge style="cursor-pointer" onClick={onClickBadge} variant={badgeVariant}>
+        <Badge
+          style="cursor-pointer mb-7"
+          onClick={onClickBadge}
+          variant={badgeVariant}
+        >
           <span className="text-xs bg-primary-600 rounded-full dark:text-white text-gray-800 px-4 py-1.5 mr-3">
             New
           </span>{" "}
-          <span className="text-sm font-medium">{ t.see_projects }</span>
+          <span className="text-sm font-medium">{t.see_projects}</span>
           <svg
             className="ml-2 w-5 h-5"
             fill="currentColor"
@@ -66,9 +70,7 @@ function Introduction() {
         </Badge>
         <Title>{t.author}</Title>
         <div className="sm:px-16 lg:px-48">
-          <Paragraph variants={textVariants}>
-            {t.description}
-          </Paragraph>
+          <Paragraph variants={textVariants}>{t.description}</Paragraph>
         </div>
       </div>
     </section>
