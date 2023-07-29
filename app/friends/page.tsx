@@ -16,15 +16,20 @@ const friends: FriendI[] = [
   },
 ];
 
+const constant = {
+  title: "List of Friends",
+  desc: `I've got some really cool friends who've totally boosted my
+          programming career. These folks have been there for me, always ready
+          to lend a hand, offer advice, and share their coding skills.`,
+};
+
 const Friends = () => {
   return (
     <Container>
       <div className="max-w-3xl mx-auto text-center">
-        <Header>List of Friends</Header>
+        <Header>{constant.title}</Header>
         <Paragraph>
-          I've got some really cool friends who've totally boosted my
-          programming career. These folks have been there for me, always ready
-          to lend a hand, offer advice, and share their coding skills.
+          {constant.desc}
         </Paragraph>
       </div>
 
