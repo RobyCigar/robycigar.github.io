@@ -23,11 +23,11 @@ function TimelineItem(props: any) {
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
         {title}
       </h3>
-      <h4 className='my-2'>
-        { subtitle }
-      </h4>
-      <p dangerouslySetInnerHTML={renderMarkdown(description)} className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-      </p>
+      <h4 className="my-2 text-gray-800 dark:text-gray-300">{subtitle}</h4>
+      <p
+        dangerouslySetInnerHTML={renderMarkdown(description)}
+        className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+      ></p>
       {button && (
         <a
           href="#"

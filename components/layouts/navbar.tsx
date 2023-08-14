@@ -14,10 +14,6 @@ interface MenuI {
     icon?: ReactElement
 }
 
-function Navbar() {
-  const translation = useTranslation()
-  const router = useRouter()
-  const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     const items: MenuI[] = [
       {
         label: "Me",
@@ -48,6 +44,11 @@ function Navbar() {
         icon: <ArrowTopRightOnSquareIcon className="h-4 w-4" />,
       },
     ];
+
+function Navbar() {
+  const translation = useTranslation()
+  const router = useRouter()
+  const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     useEffect(() => {
       if(dark) {
         const root = document.documentElement;
@@ -70,10 +71,13 @@ function Navbar() {
   return (
     <>
       <header className="fixed z-10 w-screen">
-        <nav className="bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
+        <nav className="backdrop-blur-sm bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-center space-x-8">
               <LanguageDropdown handleChange={handleChangeLanguage} />
+              <button>
+              <code>/cmd</code>
+              </button>
             </div>
             <div>
               <div className="flex items-center lg:order-2">

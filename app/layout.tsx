@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/layouts/navbar";
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const [state, setState] = useState({
+    isCommandPalleteVisible: false
+  })
   return (
     <html lang="en">
       <body
