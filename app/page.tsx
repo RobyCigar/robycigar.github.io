@@ -12,8 +12,8 @@ export default function Home() {
           right: "40px",
           left: "auto",
           zIndex: "10",
-          color: "var(--light-slate)",
         }}
+        className="text-black dark:text-white"
       >
         <ul className="flex flex-col gap-4 [&>*]:p-2">
           <li>

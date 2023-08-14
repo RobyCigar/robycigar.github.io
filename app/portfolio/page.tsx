@@ -47,7 +47,19 @@ const portfolios = [
 
 const timelines = [
   {
-    title: "Prioritas Web Teknologi as Frontend Engineer",
+    title: "Prioritas Web Teknologi as **Fullstack Engineer**",
+    subtitle: ``,
+    description: `
+      After a year of hard work, I've got a promotion to a Fullstack role! 
+      Here's what I'll be diving into:
+      - Taking business ideas and turning them into code that works like magic.
+      - Crafting code that's easy to maintain and a breeze to read.
+      Tech: docker, laravel, graphql, php, mysql, web socket
+    `,
+    date: "13 July 2023 - Now",
+  },
+  {
+    title: "Prioritas Web Teknologi as **Frontend Engineer**",
     subtitle: `Prioritas Web Teknologi is a software development company dedicated to creating innovative and cutting-edge software applications. The company has been at the forefront of developing solutions that cater to the evolving needs of businesses and individuals alike.`,
     description: `
       - Full-time job, onsite with 40hrs/week workload(9-5)
@@ -58,10 +70,10 @@ const timelines = [
       - Make friends 😁
       Tech: vue 2 & 3, vuex, pinia, jira, docker, typescript
     `,
-    date: "13 July 2022 - Now",
+    date: "13 July 2022 - 13 July 2023",
   },
   {
-    title: "Lingotalk as Frontend Engineer",
+    title: "Lingotalk as **Frontend Engineer**",
     subtitle: ``,
     description: `
       - Provide solution and execute implementation for website development requirements
