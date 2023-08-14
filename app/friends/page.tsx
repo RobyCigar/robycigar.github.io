@@ -15,7 +15,7 @@ const friends: FriendI[] = [
     role: "Sr Software Engineer",
   },
   {
-    name: "My Friends",
+    name: "All of My Friends",
     role: " at work",
   },
 ];
