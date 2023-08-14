@@ -7,12 +7,16 @@ interface FriendI { name: string; role: string }
 // add your name here
 const friends: FriendI[] = [
   {
-    name: "Lionel Messi",
+    name: "Pak Yohan",
+    role: "Sr Devops",
+  },
+  {
+    name: "Mas Frenki",
     role: "Sr Software Engineer",
   },
   {
-    name: "Naruto Uchiha",
-    role: "Project Manager",
+    name: "My Friends",
+    role: " at work",
   },
 ];
 
