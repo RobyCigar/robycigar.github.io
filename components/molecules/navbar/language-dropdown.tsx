@@ -24,7 +24,8 @@ const countries = [
 
 interface StateI {
   visible: boolean,
-  activeLanguage: any
+  activeLanguage: any,
+  loading: boolean,
 }
  
 function LanguageDropdown({ handleChange }: {
@@ -32,13 +33,15 @@ function LanguageDropdown({ handleChange }: {
 }) {
     const [state, setState] = useState<StateI>({
         visible: false,
-        activeLanguage: countries[1]
+        activeLanguage: countries[1],
+        loading: true
     })
 
     useEffect(() => {
       setState({
         ...state,
-        activeLanguage: typeof window !== "undefined" ? (countries.find(it => it.value == localStorage.getItem("lang")) ?? countries[0]) : countries[0]
+        activeLanguage: typeof window !== "undefined" ? (countries.find(it => it.value == localStorage.getItem("lang")) ?? countries[0]) : countries[0],
+        loading: false,
       })
     }, [])
     
@@ -53,6 +56,9 @@ function LanguageDropdown({ handleChange }: {
     const handleClickItem = (item: CountryOption) => {
         setState({ ...state, activeLanguage: countries.find(it => it.value === item.value) });
         handleChange(item.value)
+    }
+    if(state.loading) {
+      return null
     }
   return (
     <div>
