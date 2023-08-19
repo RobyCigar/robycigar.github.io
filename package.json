@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin production"
-
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@types/marked": "^5.0.1",
     "autoprefixer": "10.4.14",

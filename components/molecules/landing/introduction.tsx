@@ -44,7 +44,7 @@ function Introduction() {
     router.push("/portfolio")
   }
   return (
-    <section className="bg-white relative h-screen flex items-center dark:bg-gray-900">
+    <section className="bg-white absolute w-screen h-screen flex items-center dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <Badge
           style="cursor-pointer mb-7"

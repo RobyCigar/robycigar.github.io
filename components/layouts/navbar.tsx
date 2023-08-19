@@ -3,9 +3,11 @@ import { useTranslation } from '@/app/i18n';
 import useLocalStorage from '@/utils/useLocalStorage';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-import React, { ReactElement, useEffect } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import LanguageDropdown from '../molecules/navbar/language-dropdown';
 import { useRouter } from "next/navigation";
+import CommandPallete from '../molecules/CommandPalletes';
+import Badge from '../atoms/badge';
 
 interface MenuI {
     label: string,
@@ -48,13 +50,15 @@ interface MenuI {
 function Navbar() {
   const translation = useTranslation()
   const router = useRouter()
+  const [data, setData] = useState({
+    commandPalleteOpen: false
+  })
   const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
     useEffect(() => {
       if(dark) {
         const root = document.documentElement;
         root.classList.add("dark");
       }
-    console.log({ router });
 
     })
     const onChangeDarkMode = () => {
@@ -68,15 +72,32 @@ function Navbar() {
       translation.loadTranslation()
       location.reload()
     }
+    const toggleCommandPallete = () => {
+      setData({
+        ...data,
+        commandPalleteOpen: !data.commandPalleteOpen
+      })
+    }
   return (
     <>
+      <CommandPallete
+        open={data.commandPalleteOpen}
+        setOpen={toggleCommandPallete}
+      />
       <header className="fixed z-10 w-screen">
         <nav className="backdrop-blur-sm bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-center space-x-8">
               <LanguageDropdown handleChange={handleChangeLanguage} />
               <button>
-              <code>/cmd</code>
+                <Badge style="rounded-md border-gray-300">
+                  <code
+                    className="text-base font-semibold"
+                    onClick={toggleCommandPallete}
+                  >
+                    /cmd ⌘ + k
+                  </code>
+                </Badge>
               </button>
             </div>
             <div>
