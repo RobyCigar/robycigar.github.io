@@ -51,10 +51,9 @@ function Introduction() {
           onClick={onClickBadge}
           variant={badgeVariant}
         >
-          <span className="text-xs bg-primary-600 rounded-full dark:text-white text-gray-800 px-4 py-1.5 mr-3">
-            New
+          <span className="text-sm font-medium bg-primary-600 rounded-full dark:text-white text-gray-800 px-4 py-1.5 mr-3">
+            {t.see_projects}
           </span>{" "}
-          <span className="text-sm font-medium">{t.see_projects}</span>
           <svg
             className="ml-2 w-5 h-5"
             fill="currentColor"

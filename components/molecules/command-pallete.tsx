@@ -27,19 +27,9 @@ import {
   VideoCameraIcon,
   ViewColumnsIcon,
   Bars4Icon,
+  MoonIcon
 } from "@heroicons/react/24/outline";
-
-const items = [
-  {
-    id: 1,
-    name: "Halow",
-    description: "Masih Belum jadi gan, males bikinnya nanti aja kalo dah mood",
-    url: "#",
-    color: "bg-indigo-500",
-    icon: PencilSquareIcon,
-  },
-  // More items...
-];
+import useThemes from "@/hooks/useThemes";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -50,6 +40,28 @@ export default function CommandPallete({
     setOpen
 }: any) {
   const [query, setQuery] = useState("");
+  const themes = useThemes();
+
+  const items = [
+    {
+      id: 1,
+      name: "Halow",
+      description:
+        "Masih Belum jadi gan, males bikinnya nanti aja kalo dah mood",
+      url: "#",
+      color: "bg-indigo-500",
+      icon: PencilSquareIcon,
+    },
+    {
+      id: 1,
+      name: "Dark Themes",
+      description: "Switch between dark or light themes",
+      url: "#",
+      color: "bg-indigo-500",
+      icon: MoonIcon,
+      click: themes.onChangeDarkMode,
+    },
+  ];
 
   const filteredItems =
     query === ""
@@ -89,7 +101,7 @@ export default function CommandPallete({
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-              <Combobox onChange={(item) => (window.location = item.url)}>
+              <Combobox onChange={(item: any) => (window.location = item.url)}>
                 <div className="relative">
                   <MagnifyingGlassIcon
                     className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400"
@@ -109,11 +121,12 @@ export default function CommandPallete({
                   >
                     {filteredItems.map((item) => (
                       <Combobox.Option
-                        key={item.id}
+                        key={item.name}
                         value={item}
+                        onClick={item.click}
                         className={({ active }) =>
                           classNames(
-                            "flex cursor-default select-none rounded-xl p-3",
+                            "flex cursor-pointer select-none rounded-xl p-3",
                             active && "bg-gray-100"
                           )
                         }

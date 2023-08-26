@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 function Container({ children }: { children: React.ReactNode }) {
   return (
     <motion.section
-      initial={{ x: 20, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      initial={{ x: 0, y: 10, opacity: 0 }}
+      animate={{ x: 0, y: 0, opacity: 1 }}
       exit={{ x: 20, opacity: 0 }}
       transition={{
         type: "spring",

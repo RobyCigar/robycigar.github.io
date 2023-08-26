@@ -5,9 +5,13 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 interface CountryOption {
     label: string,
-    value: string
+    value: string | null
 }
 const countries = [
+  {
+    label: "Select Language",
+    value: null,
+  },
   {
     label: "🇬🇧 English",
     value: "en",
@@ -33,7 +37,7 @@ function LanguageDropdown({ handleChange }: {
 }) {
     const [state, setState] = useState<StateI>({
         visible: false,
-        activeLanguage: countries[1],
+        activeLanguage: countries.find((it: CountryOption) => it.value === localStorage.getItem('lang')),
         loading: true
     })
 
@@ -54,12 +58,15 @@ function LanguageDropdown({ handleChange }: {
     };
     const ref = useClickOutside(handleClickOutside);
     const handleClickItem = (item: CountryOption) => {
-        setState({ ...state, activeLanguage: countries.find(it => it.value === item.value) });
-        handleChange(item.value)
+      if(!item.value) {
+        return
+      }
+      // setState({ ...state, activeLanguage: countries.find(it => it.value === item.value) });
+      handleChange(item.value)
     }
-    if(state.loading) {
-      return null
-    }
+    // if(state.loading) {
+    //   return null
+    // }
   return (
     <div>
       <div className="flex relative">

@@ -1,12 +1,12 @@
 "use client"
+/* eslint-disable @next/next/no-img-element */
 import { useTranslation } from '@/app/i18n';
-import useLocalStorage from '@/utils/useLocalStorage';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import React, { ReactElement, useEffect, useState } from 'react'
 import LanguageDropdown from '../molecules/navbar/language-dropdown';
 import { useRouter } from "next/navigation";
-import CommandPallete from '../molecules/CommandPalletes';
+import CommandPallete from '../molecules/command-pallete';
 import Badge from '../atoms/badge';
 
 interface MenuI {
@@ -51,21 +51,9 @@ function Navbar() {
   const translation = useTranslation()
   const router = useRouter()
   const [data, setData] = useState({
-    commandPalleteOpen: false
+    commandPalleteOpen: false,
+    onHoverPicture: false
   })
-  const [dark, setDark] = useLocalStorage<boolean>("is_dark", false)
-    useEffect(() => {
-      if(dark) {
-        const root = document.documentElement;
-        root.classList.add("dark");
-      }
-
-    })
-    const onChangeDarkMode = () => {
-        const root = document.documentElement;
-        root.classList.toggle("dark");
-        setDark(!dark)
-    }
     const handleChangeLanguage = (lang: string) => {
       localStorage.setItem("lang", lang)
       translation.setLanguage(lang)
@@ -87,7 +75,39 @@ function Navbar() {
       <header className="fixed z-10 w-screen">
         <nav className="backdrop-blur-sm bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-stretch space-x-8">
+              <div className="flex items-center space-x-4">
+                {!data.onHoverPicture ? (
+                  <img
+                    onMouseEnter={() =>
+                      setData({
+                        ...data,
+                        onHoverPicture: true,
+                      })
+                    }
+                    className="w-10 h-10 rounded-full"
+                    src="/assets/foto_profil_linkedin.jpeg"
+                    alt="Profile Picture"
+                  />
+                ) : (
+                  <img
+                    onMouseLeave={() =>
+                      setData({
+                        ...data,
+                        onHoverPicture: false,
+                      })
+                    }
+                    className="w-10 h-10 rounded-full"
+                    src="/assets/foto_profil_twitter.jpeg"
+                    alt="Profile Picture"
+                  />
+                )}
+                {/* <div className="font-medium dark:text-white">
+                    <div>Jese Leos</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
+                </div> */}
+              </div>
+
               <LanguageDropdown handleChange={handleChangeLanguage} />
               <button>
                 <Badge style="rounded-md border-gray-300">
@@ -95,7 +115,7 @@ function Navbar() {
                     className="text-base font-semibold"
                     onClick={toggleCommandPallete}
                   >
-                    /cmd ⌘ + k
+                    /cmd
                   </code>
                 </Badge>
               </button>
