@@ -37,7 +37,7 @@ function LanguageDropdown({ handleChange }: {
 }) {
     const [state, setState] = useState<StateI>({
         visible: false,
-        activeLanguage: countries.find((it: CountryOption) => it.value === localStorage.getItem('lang')),
+        activeLanguage: typeof window !== "undefined" ? countries.find((it: CountryOption) => it.value === localStorage.getItem('lang')) : 'id',
         loading: true
     })
 

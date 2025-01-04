@@ -55,7 +55,9 @@ function Navbar() {
     onHoverPicture: false
   })
     const handleChangeLanguage = (lang: string) => {
-      localStorage.setItem("lang", lang)
+      if (typeof window !== "undefined") {
+        localStorage.setItem("lang", lang)
+      }
       translation.setLanguage(lang)
       translation.loadTranslation()
       location.reload()
