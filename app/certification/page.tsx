@@ -1,6 +1,7 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import Container from '@/components/molecules/landing/container'
-import React from 'react'
+import Container from "@/components/molecules/landing/container";
+import React from "react";
 
 function Certification() {
   return (
@@ -16,4 +17,4 @@ function Certification() {
   );
 }
 
-export default Certification
+export default Certification;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import Paragraph from "@/components/atoms/paragraph";
 import Container from "@/components/molecules/landing/container";
