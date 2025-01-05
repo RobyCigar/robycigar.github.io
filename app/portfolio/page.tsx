@@ -19,30 +19,22 @@ const portfolios = [
     meta: "Private Project",
   },
   {
-    title: "Auditing System",
-    description:
-      "I was working on an auditing system for a large number of users. The system is responsible for making decisions regarding a user's salary.",
-    image:
-      "https://em-content.zobj.net/thumbs/240/google/350/balance-scale_2696-fe0f.png",
-    link: "",
-    meta: "Company Project",
-  },
-  {
-    title: "ERP System for Multinational Company",
-    description:
-      "During our work, we had the opportunity to develop Enterprise Resource Planning (ERP) applications. This system not only accommodates a volume of transactions but also a significant active user.",
-    image:
-      "https://em-content.zobj.net/thumbs/240/google/350/dollar-banknote_1f4b5.png",
-    link: "",
-    meta: "Company Project",
-  },
-  {
     title: "Personal Project",
-    description: "During my free time, sometimes i learn new thing in order to keep track my learning progress.",
+    description:
+      "During my free time, sometimes i learn new thing in order to keep track my learning progress.",
     image:
       "https://em-content.zobj.net/thumbs/240/google/350/open-book_1f4d6.png",
     link: "",
     meta: "Public Access",
+  },
+  {
+    title: "Tons of Projects",
+    description:
+      "Actually I had tons of projects but too lazy to put in here",
+    image:
+      "https://em-content.zobj.net/thumbs/240/google/350/dollar-banknote_1f4b5.png",
+    link: "",
+    meta: "Company Project",
   },
 ];
 
@@ -89,7 +81,7 @@ const timelines = [
 ];
 
 const Portfolio = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <Container>
       <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">

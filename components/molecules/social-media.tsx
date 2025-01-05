@@ -115,7 +115,7 @@ function SocialMedia() {
             content: '""',
             display: "block",
             width: "1px",
-            height: "90px",
+            height: "60px",
             padding: "0",
             margin: "0px auto",
             backgroundColor: "gray",

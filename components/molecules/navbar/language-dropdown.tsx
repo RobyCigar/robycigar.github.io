@@ -41,13 +41,13 @@ function LanguageDropdown({ handleChange }: {
         loading: true
     })
 
-    useEffect(() => {
-      setState({
-        ...state,
-        activeLanguage: typeof window !== "undefined" ? (countries.find(it => it.value == localStorage.getItem("lang")) ?? countries[0]) : countries[0],
-        loading: false,
-      })
-    }, [])
+    // useEffect(() => {
+    //   setState({
+    //     ...state,
+    //     activeLanguage: typeof window !== "undefined" ? (countries.find(it => it.value == localStorage.getItem("lang")) ?? countries[0]) : countries[0],
+    //     loading: false,
+    //   })
+    // }, [])
     
 
     const toggleVisible = () => {
