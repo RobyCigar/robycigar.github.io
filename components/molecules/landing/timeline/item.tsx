@@ -5,16 +5,16 @@ import React, { useEffect, useState } from 'react'
 
 function TimelineItem(props: any) {
     const { date, title, description, button, subtitle } = props
-    const [render, setRender] = useState(false);
-    useEffect(() => {
+    // const [render, setRender] = useState(false);
+    // useEffect(() => {
       
-      setRender(true)
-      return () => {
+    //   setRender(true)
+    //   return () => {
         
-      }
-    }, [])
+    //   }
+    // }, [])
     
-  return !render ? null : (
+  return (
     <li className="mb-10 ml-4">
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
