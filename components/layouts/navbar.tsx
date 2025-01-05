@@ -58,47 +58,12 @@ interface MenuI {
         icon: <ArrowTopRightOnSquareIcon className="h-4 w-4" />,
       },
     ];
-const solutions = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers' data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
-const CardOverlay = ({ isOpen, onClose, children }) => {
-  const cardRef = useRef(null);
+
+const CardOverlay = ({ isOpen, onClose, children }: any) => {
+  const cardRef = useRef<any>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: any) => {
       if (cardRef.current && !cardRef.current.contains(event.target)) {
         onClose();
       }
@@ -129,10 +94,10 @@ const CardOverlay = ({ isOpen, onClose, children }) => {
   );
 };
 
-const DropdownList = ({ isOpen, onClose, items }) => {
+const DropdownList = ({ isOpen, onClose, items }: any) => {
   return (
     <CardOverlay isOpen={isOpen} onClose={onClose}>
-      {items.map((item) => (
+      {items.map((item: any) => (
         <div
           onClick={items?.click ? items.click : undefined}
           key={item.label}
@@ -158,14 +123,6 @@ function Navbar() {
     onHoverPicture: false,
     showItemList: false,
   })
-    const handleChangeLanguage = (lang: string) => {
-      if (typeof window !== "undefined") {
-        localStorage.setItem("lang", lang)
-      }
-      translation.setLanguage(lang)
-      translation.loadTranslation()
-      location.reload()
-    }
     const toggleCommandPallete = () => {
       setData({
         ...data,

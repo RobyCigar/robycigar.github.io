@@ -5,7 +5,7 @@ import * as config from "@/locales/id/translation.json"
 export type TranslationType = {
     [K in keyof typeof config]: string
 } | any
-export const useTranslation = ({ reload, setReload }: any = {}): {t: TranslationType, loadTranslation: any, setLanguage: any, language: any} => {
+export const useTranslation = ({ reload, setReload }: any = {}): any => {
     const lang = (typeof window !== "undefined" ? window.localStorage.getItem("lang") : 'id') ?? 'id'
     const [language, setLanguage] = useState(lang)
     // const [translation, setTranslation] = useState<TranslationType>({})
