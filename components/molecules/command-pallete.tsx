@@ -30,15 +30,15 @@ export default function CommandPallete({
   const themes = useThemes();
 
   const items = [
-    {
-      id: 1,
-      name: "Halow",
-      description:
-        "Masih Belum jadi gan, males bikinnya nanti aja kalo dah mood",
-      url: "#",
-      color: "bg-indigo-500",
-      icon: PencilSquareIcon,
-    },
+    // {
+    //   id: 1,
+    //   name: "Halow",
+    //   description:
+    //     "Masih Belum jadi gan, males bikinnya nanti aja kalo dah mood",
+    //   url: "#",
+    //   color: "bg-indigo-500",
+    //   icon: PencilSquareIcon,
+    // },
     {
       id: 1,
       name: "Dark Themes",

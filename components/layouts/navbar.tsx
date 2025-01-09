@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from '@/app/i18n';
 import Link from 'next/link';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { ArrowTopRightOnSquareIcon, BookmarkIcon, HeartIcon, HomeIcon, MusicalNoteIcon, PhotoIcon } from '@heroicons/react/24/outline';
 import React, { ReactElement, useEffect, useState, useRef } from 'react'
 import LanguageDropdown from '../molecules/navbar/language-dropdown';
 import { useRouter } from "next/navigation";
@@ -20,38 +20,51 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
+import { Combobox } from '@headlessui/react';
 
 interface MenuI {
-    label: string,
-    link: string,
-    click?: () => void,
-    icon?: ReactElement
+  label: string;
+  link: string;
+  desc: string;
+  click?: () => void;
+  icon?: any;
 }
 
     const items: MenuI[] = [
       {
         label: "Me",
+        desc: "Tentang Rabih",
         link: "/",
+        icon: <HomeIcon className="h-6 w-6 " />,
       },
       {
         label: "Portfolio",
+        desc: "Karya yang pernah dibuat",
         link: "/portfolio",
+        icon: <BookmarkIcon className="h-6 w-6 " />,
       },
       {
         label: "Gallery",
+        desc: "Kumpulan media foto/video",
         link: "/gallery",
+        icon: <PhotoIcon className="h-6 w-6 " />,
       },
       {
         label: "Friends",
+        desc: "List teman",
         link: "/friends",
+        icon: <HeartIcon className="h-6 w-6 " />,
       },
       {
         label: "Certification",
+        desc: "Sertifikasi",
         link: "/certification",
+        icon: <MusicalNoteIcon className="h-6 w-6 " />,
       },
       {
         label: "Blog",
         link: "/blog",
+        desc: "Tulisan",
         click: () => {
           window.open("https://dev.to/robycigar");
         },
@@ -93,24 +106,83 @@ const CardOverlay = ({ isOpen, onClose, children }: any) => {
     </div>
   );
 };
-
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
 const DropdownList = ({ isOpen, onClose, items }: any) => {
+  const router = useRouter()
   return (
     <CardOverlay isOpen={isOpen} onClose={onClose}>
-      {items.map((item: any) => (
-        <div
-          onClick={items?.click ? items.click : undefined}
-          key={item.label}
-          className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50"
+      <Combobox>
+        <Combobox.Options
+          static
+          className="scroll-py-3 overflow-y-auto p-3"
         >
-          <div>
-            <Link href={item.link} className="font-semibold text-gray-900">
-              {item.label}
-              <span className="absolute inset-0" />
-            </Link>
+          {items.map((item: any) => (
+            <Combobox.Option
+              key={item.label}
+              value={item}
+              onClick={item.click ? item.click : () => router.push(item.link) }
+              className={({ active }) =>
+                classNames(
+                  "flex cursor-pointer select-none rounded-xl p-3",
+                  active && "bg-gray-100"
+                )
+              }
+            >
+              {({ active }) => (
+                <>
+                  <div
+                    className={classNames(
+                      "flex h-10 w-10 flex-none items-center justify-center rounded-lg",
+                      item.color
+                    )}
+                  >
+                    {item.icon}
+                    {/* <item.icon
+                    className="h-6 w-6 text-white"
+                    aria-hidden="true"
+                  /> */}
+                  </div>
+                  <div className="ml-4 flex-auto">
+                    <p
+                      className={classNames(
+                        "text-sm font-medium",
+                        active ? "text-gray-900" : "text-gray-700"
+                      )}
+                    >
+                      {item.label}
+                    </p>
+                    <p
+                      className={classNames(
+                        "text-sm",
+                        active ? "text-gray-700" : "text-gray-500"
+                      )}
+                    >
+                      {item.label}
+                    </p>
+                  </div>
+                </>
+              )}
+            </Combobox.Option>
+          ))}
+        </Combobox.Options>
+        {/* <CardOverlay isOpen={isOpen} onClose={onClose}>
+        {items.map((item: any) => (
+          <div
+            onClick={items?.click ? items.click : undefined}
+            className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50"
+          >
+            <div>
+              <Link href={item.link} className="font-semibold text-gray-900">
+                {item.label}
+                <span className="absolute inset-0" />
+              </Link>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </CardOverlay> */}
+      </Combobox>
     </CardOverlay>
   );
 };
