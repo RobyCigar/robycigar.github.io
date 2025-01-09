@@ -21,13 +21,14 @@ function TimelineItem(props: any) {
         {date}
       </time>
       <h3
-        dangerouslySetInnerHTML={renderMarkdown(title ?? '')}
+        dangerouslySetInnerHTML={renderMarkdown(title ?? "")}
         className="text-xl font-semibold text-gray-900 dark:text-white"
-      >
-      </h3>
+      ></h3>
       <h4 className="my-2 text-gray-800 dark:text-gray-300">{subtitle}</h4>
       <p
-        dangerouslySetInnerHTML={renderMarkdown(description)}
+        dangerouslySetInnerHTML={{
+          __html: description,
+        }}
         className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
       ></p>
       {button && (

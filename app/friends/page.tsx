@@ -23,13 +23,16 @@ const friends: FriendI[] = [
     name: "All of My Friends",
     role: " at work",
   },
+  {
+    name: "Teman-teman pejuang sakit kronis",
+    role: " at life",
+  },
 ];
 
 const constant = {
   title: "List of Friends",
-  desc: `I've got some really cool friends who've totally boosted my
-          programming career. These folks have been there for me, always ready
-          to lend a hand, offer advice, and share their coding skills.`,
+  desc: `I've got some really cool friends. These folks have been there for me, always ready
+          to lend a hand, offer advice, and share their skills and expertise.`,
 };
 
 const Friends = () => {

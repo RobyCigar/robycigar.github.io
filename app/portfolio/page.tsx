@@ -29,12 +29,18 @@ const portfolios = [
   },
   {
     title: "Tons of Projects",
-    description:
-      "Actually I had tons of projects but too lazy to put in here",
+    description: "Actually I had tons of projects but too lazy to put in here",
     image:
       "https://em-content.zobj.net/thumbs/240/google/350/dollar-banknote_1f4b5.png",
     link: "",
     meta: "Company Project",
+  },
+  {
+    title: "Jiwaku App",
+    description: "Mental health apps, mobile platform, available on google play",
+    image: "https://jiwaku.rabihutomo.com/thumbnail.jpeg",
+    link: "",
+    meta: "Public Access",
   },
 ];
 
@@ -45,22 +51,31 @@ const timelines = [
     description: `
       After a year of hard work, I've got a promotion to a Fullstack role! 
       Here's what I'll be diving into:
+      <br/>
       - Taking business ideas and turning them into code that works like magic.
+      <br/>
       - Crafting code that's easy to maintain and a breeze to read.
       Tech: docker, laravel, graphql, php, mysql, web socket
     `,
-    date: "13 July 2023 - Now",
+    date: "13 July 2023 - June 2024",
   },
   {
     title: "Prioritas Web Teknologi as **Frontend Engineer**",
     subtitle: `Prioritas Web Teknologi is a software development company dedicated to creating innovative and cutting-edge software applications. The company has been at the forefront of developing solutions that cater to the evolving needs of businesses and individuals alike.`,
     description: `
+    <br/>
       - Full-time job, onsite with 40hrs/week workload(9-5)
+    <br/>
       - Responsible for creating application interface and business flow into code
+    <br/>
       - Responsible for developing microfrontend for large size apps
+    <br/>
       - Work seamlessly with backend engineer, UI/UX team, and other stakeholder
+    <br/>
       - Maintain & scale apps 
+    <br/>
       - Make friends 😁
+    <br/>
       Tech: vue 2 & 3, vuex, pinia, jira, docker, typescript
     `,
     date: "13 July 2022 - 13 July 2023",
@@ -69,12 +84,18 @@ const timelines = [
     title: "Lingotalk as **Frontend Engineer**",
     subtitle: ``,
     description: `
+    <br/>
       - Provide solution and execute implementation for website development requirements
       (web and database) based on the agreed timeline.
+    <br/>
       - Assess potential improvements and potential bugs in the web development.
+    <br/>
       - Work closely together with front-end (/back-end) & project manager.
+    <br/>
       - Work in fast-paced team.
+    <br/>
       - Tech environment: Svelte, ReactJs, NextJs, Gitlab, Figma, MS Teams, Trello.
+    <br/>
       - Make a friends(sadly we can never meet because it was a remote work) 🥹
       `,
   },
@@ -105,12 +126,12 @@ const Portfolio = () => {
               )}
               <a href="#">
                 <img
-                  className="h-16 w-32 flex-shrink-0 object-contain px-4 rounded-lg sm:rounded-none sm:rounded-l-lg "
+                  className="h-16 mx-auto w-32 flex-shrink-0 object-contain px-4 rounded-lg sm:rounded-none sm:rounded-l-lg "
                   src={portfolio.image}
                   alt={portfolio.title}
                 />
               </a>
-              <div className="py-5 w-3/4 pr-2">
+              <div className="mx-auto py-5 w-3/4 pr-2">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
                   <a href="#">{portfolio.title}</a>
                   {
