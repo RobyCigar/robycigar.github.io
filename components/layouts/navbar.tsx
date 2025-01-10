@@ -116,7 +116,7 @@ const DropdownList = ({ isOpen, onClose, items }: any) => {
       <Combobox>
         <Combobox.Options
           static
-          className="scroll-py-3 overflow-y-auto p-3"
+          className=""
         >
           {items.map((item: any) => (
             <Combobox.Option
