@@ -34,10 +34,7 @@ export default function RootLayout({
           content="HTML, CSS, JavaScript, React, Fullstack, React Native, Graphql, Developer, Software Engineer, Frontend, Backend"
         />
         <meta name="author" content="Rabih Utomo" />
-        <meta
-          name="twitter:image:src"
-          content="/assets/foto_profil_linkedin"
-        />
+        <meta name="twitter:image:src" content="/assets/foto_profil_linkedin" />
         <meta name="twitter:site" content="@github" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rabih Utomo" />
@@ -46,15 +43,17 @@ export default function RootLayout({
           content="Hi, you can call me Rabih, an IT student and I have interest towards frontend development(and backend stuff sometimes) currently live in Yogyakarta"
         />
 
-        <meta
-          property="og:image"
-          content="/assets/foto_profil_linkedin"
-        />
+        <meta property="og:image" content="/assets/foto_profil_linkedin" />
         <meta
           property="og:description"
           content="Hi, you can call me Rabih, an IT student and I have interest towards frontend development(and backend stuff sometimes) currently live in Yogyakarta, Indonesia. My main weapon is React, Next, Node. For more information please run `npx robycigar` on your terminal."
         />
         <meta property="og:title" content="Rabih Utomo" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2242816010232507"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body
         className={[inter.className, "bg-white dark:bg-gray-900"].join(" ")}
