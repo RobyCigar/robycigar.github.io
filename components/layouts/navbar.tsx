@@ -30,42 +30,42 @@ interface MenuI {
   icon?: any;
 }
 
-    const items: MenuI[] = [
+export const items: MenuI[] = [
       {
         label: "Me",
         desc: "Tentang Rabih",
         link: "/",
-        icon: <HomeIcon className="h-6 w-6 " />,
+        icon: <HomeIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
       {
         label: "Portfolio",
         desc: "Karya yang pernah dibuat",
         link: "/portfolio",
-        icon: <BookmarkIcon className="h-6 w-6 " />,
+        icon: <BookmarkIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
       {
         label: "Gallery",
         desc: "Kumpulan media foto/video",
         link: "/gallery",
-        icon: <PhotoIcon className="h-6 w-6 " />,
+        icon: <PhotoIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
       {
         label: "Friends",
         desc: "List teman",
         link: "/friends",
-        icon: <HeartIcon className="h-6 w-6 " />,
+        icon: <HeartIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
       {
         label: "Certification",
         desc: "Sertifikasi",
         link: "/certification",
-        icon: <MusicalNoteIcon className="h-6 w-6 " />,
+        icon: <MusicalNoteIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
       {
         label: "Blog",
         link: "/blog",
         desc: "Tulisan",
-        icon: <ArrowTopRightOnSquareIcon className="h-6 w-6" />,
+        icon: <ArrowTopRightOnSquareIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
       },
     ];
 
