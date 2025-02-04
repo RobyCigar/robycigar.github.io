@@ -11,35 +11,8 @@ export default function Blog() {
   
   const categories = ['Coding', 'Startups', 'Tutorials', 'Indie Hacking'];
   
-  const allArticles = {
+  const allArticles: any = {
     Coding: allPostsData,
-    Startups: [
-      {
-        id: 4,
-        title: 'Building in Public',
-        description: 'Learn how to leverage the power of building in public to grow your audience and get feedback early.',
-        date: 'DEC 23, 2023',
-        image: '/api/placeholder/400/400',
-      },
-    ],
-    Tutorials: [
-      {
-        id: 5,
-        title: 'Getting Started with Next.js',
-        description: 'A comprehensive guide to building modern web applications with Next.js and React.',
-        date: 'DEC 22, 2023',
-        image: '/api/placeholder/400/400',
-      },
-    ],
-    'Indie Hacking': [
-      {
-        id: 6,
-        title: "Solo Developer's Guide",
-        description: 'Tips and tricks for building and launching products as a solo developer.',
-        date: 'DEC 21, 2023',
-        image: '/api/placeholder/400/400',
-      },
-    ],
   };
   return (
     <div className="flex-1 ml-20">
@@ -84,7 +57,7 @@ export default function Blog() {
 
             {/* Articles */}
             <div className="mt-8 space-y-8">
-              {allArticles[activeTab].map((article) => (
+              {allArticles[activeTab].map((article: any) => (
                 <Link
                   href={`blog/${article.id}`}
                   key={article.id}
