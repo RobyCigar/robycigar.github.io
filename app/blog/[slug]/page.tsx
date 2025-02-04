@@ -3,7 +3,6 @@ import Head from "next/head";
 import { NextSeo } from "next-seo";
 
 export default async function Post({ params }: any) {
-  console.log({params})
   const postData: any = await getPostData(params.slug);
 
   const SEO = {
