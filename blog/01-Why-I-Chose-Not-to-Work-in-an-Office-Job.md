@@ -1,7 +1,7 @@
 ---
 title: "Why I Chose Not to Work in an Office Job"
 date: "2024-02-03"
-excerpt: "For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs. It felt like a steady and reliable job, the kind of job that many people aim for. But everything changed in June 2024 when I found out I had cancer. This news turned my world upside down and made me rethink my career and what I really wanted out of life."
+excerpt: "For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs."
 tags: ["programming", "story"]
 ---
 
