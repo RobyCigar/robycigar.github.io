@@ -65,10 +65,7 @@ interface MenuI {
         label: "Blog",
         link: "/blog",
         desc: "Tulisan",
-        click: () => {
-          window.open("https://dev.to/robycigar");
-        },
-        icon: <ArrowTopRightOnSquareIcon className="h-4 w-4" />,
+        icon: <ArrowTopRightOnSquareIcon className="h-6 w-6" />,
       },
     ];
 
