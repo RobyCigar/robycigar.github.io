@@ -57,14 +57,14 @@ export default function Blog() {
 
             {/* Articles */}
             <div className="mt-8 space-y-8">
-              {allArticles[activeTab].map((article: any) => (
+              {allArticles[activeTab].map((article: any, index: number) => (
                 <Link
                   href={`blog/${article.id}`}
                   key={article.id}
                   className="flex items-start gap-6 group cursor-pointer"
                 >
                   <img
-                    src={article.image ?? "https://picsum.photos/200/300"}
+                    src={article.image ?? "https://picsum.photos/200/300?random=" + index}
                     alt={article.title}
                     className="w-24 h-24 rounded-lg object-cover"
                   />
