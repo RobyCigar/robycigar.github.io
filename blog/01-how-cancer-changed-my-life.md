@@ -1,24 +1,23 @@
 ---
-title: "Why I Chose Not to Work in an Office Job"
+title: "How Cancer Changed My Life"
 date: "2024-02-03"
 excerpt: "For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs."
 tags: ["programming", "story"]
 ---
 
-For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs. It felt like a steady and reliable job, the kind of job that many people aim for. But everything changed in June 2024 when I found out I had cancer. This news turned my world upside down and made me rethink my career and what I really wanted out of life.
+For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs. It felt like a steady and reliable job, the kind of job that many people aim for. But everything changed in June 2024 when I found out I had a lump in my neck and turns out it is a fucking cancer. Something that I have never imagined before—a healthy, young person like me, who has never smoked or consumed alcohol, being diagnosed with this shit. This news turned my world upside down and made me rethink my career and what I really wanted out of life.
 
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C_-ZFXdPDzF/?img_index=1" data-instgrm-version="14"></blockquote>
-<script async src="//www.instagram.com/embed.js"></script>
+![Gambar Screenshot instagram](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i9q3vw2ckitzfx1erq1u.jpeg)
 
 
-When I got my diagnosis, everything started to feel harder. It wasn’t just the emotional stress; my body also felt very weak. I didn’t have the energy to sit at a desk all day, solve difficult problems, and meet deadlines. Even small tasks felt like they took a lot out of me. No matter how much I tried, I couldn’t keep up with the demands of a 9-to-5 job. I felt so tired all the time, and just the idea of going back to work felt overwhelming. I realized that my health had to come first.
+When I got my diagnosis, everything started to feel harder. It wasn’t just the emotional stress; my body also felt very weak. I couldn’t keep up with the demands of a 9-to-5 job. I felt so tired all the time, and just the idea of going back to work felt overwhelming. I realized that my health had to come first.
 
 Leaving my job was a really tough choice, but it was something I needed to do. Quitting meant giving up a stable income and leaving behind my coworkers, who had become my friends. But I knew it was the right thing for me. After I quit, I started helping my parents with their daily tasks. It made me feel good to help them and feel useful at home. This was something I hadn’t experienced before in the same way, and it gave me a new sense of purpose.
 
-At the same time, I found out I really liked making content on Instagram and TikTok. I started sharing fun moments, ideas, and stories, and it turned into a creative outlet for me. Making videos helped me express myself and connect with other people. It also made me feel like I was still doing something meaningful, even though I wasn’t working a traditional job. It was exciting to see how others enjoyed my content, and it gave me a sense of accomplishment.
+At the same time, I found out I really liked making content on Instagram and TikTok. I started sharing fun moments, ideas, and stories. Making videos helped me express myself and connect with other people. It also made me feel like I was still doing something meaningful, even though I wasn’t working a traditional job. It was exciting to see how others enjoyed my content, and it gave me a sense of accomplishment.
 
-{% embed https://www.instagram.com/p/DBLyLeWPC49/ %}
-*Alt: My first 3 million views on instagram*
+![3 Millions view on instagram](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/19rtp4ujhf03wnts5rvw.jpeg)
+
 
 
 This change in my lifestyle also helped me find something I had been missing: work-life balance. I didn’t have to follow a strict schedule anymore, and I could plan my days in a way that suited me better. I could sleep in, spend time on things I enjoyed, and focus on staying healthy. This freedom gave me time to think about what I really wanted in life. I realized that I needed to find work that wasn’t too demanding but could still support me financially. This would let me keep living a balanced life that made me happy and healthy.
