@@ -27,15 +27,15 @@ export default async function Post({ params }: any) {
       </Head>
       <main className="dark:bg-gray-800 ">
         <article className="max-w-3xl px-4 mx-auto pb-32">
-          <h1 className="dark:text-gray-50 py-4 cursor-pointer text-3xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="dark:text-gray-50 py-4 mt-4 cursor-pointer text-3xl font-bold tracking-tight sm:text-6xl">
             {postData.title}
           </h1>
           <p className="dark:text-gray-200 pt-2 pb-10">
-            Diupload pada: {postData.date}
+            Ditulis pada: {postData.date}
             <br />
             Penulis: Rabih Utomo
-            <br />
-            Tags: {postData.tags}
+            {/* <br />
+            Tags: {postData.tags} */}
           </p>
           <div
             className="prose dark:prose-invert"
