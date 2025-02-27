@@ -1,6 +1,6 @@
 ---
 title: "How Cancer Changed My Life"
-date: "2024-02-03"
+date: "2025-02-03"
 excerpt: "For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs."
 tags: ["programming", "story"]
 ---

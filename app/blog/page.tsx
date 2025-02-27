@@ -15,7 +15,7 @@ export default function Blog() {
     Coding: allPostsData,
   };
   return (
-    <div className="flex-1 ml-20">
+    <div className="flex-1">
       <div className="flex">
         <div className="flex-1 max-w-4xl mx-auto px-8 py-12">
           {/* Header */}

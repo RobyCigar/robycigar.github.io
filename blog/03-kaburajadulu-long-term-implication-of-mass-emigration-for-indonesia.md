@@ -1,6 +1,7 @@
 ---
 title: "#KaburAjaDulu: Long Term Implication of Mass Emigration for Indonesia"
-date: "202The #KaburAjaDulu ("Just Flee First") trend reflects Indonesian netizens' frustration with domestic challenges like unemployment, low wages, and political disillusionment. If large-scale emigration occurs, Indonesia could face multifaceted consequences."
+date: "2025-02-27"
+excerpt: "The #KaburAjaDulu (\"Just Flee First\") trend reflects Indonesian netizens' frustration with domestic challenges like unemployment, low wages, and political disillusionment. If large-scale emigration occurs, Indonesia could face multifaceted consequences."
 tags: ["programming", "story"]
 ---
 
@@ -39,11 +40,6 @@ The #KaburAjaDulu ("Just Flee First") trend reflects Indonesian netizens' frustr
 - **Social Inequality**: Remittances might benefit specific regions (e.g., East Java, NTB), exacerbating regional disparities.  
 - **Mental Health Crisis**: Isolation and cultural alienation abroad, coupled with fractured families at home, could increase depression and anxiety rates.  
 - **Identity Crisis**: Younger generations abroad may struggle with belonging, while domestic populations resent returnees' perceived "foreignness."  
-
-### **Mitigation Strategies**  
-- **Skill Retention Programs**: Incentivize high-potential workers to stay via competitive salaries and R&D investment.  
-- **Diaspora Engagement**: Create pathways for knowledge transfer and investment (e.g., Indonesia’s *Diaspora Bond*).  
-- **Labor Protection**: Strengthen bilateral agreements to safeguard migrant rights and ensure fair recruitment practices.  
 
 ## Long term impact
 
@@ -116,8 +112,6 @@ The long-term impact of large-scale emigration, as reflected in trends like **#K
 2. **Leverage Diaspora**: Offer dual citizenship, tax breaks, and startup grants to incentivize returnees.  
 3. **Domestic Job Creation**: Partner with private sectors to build industries (e.g., renewable energy, EV batteries) that retain skilled workers.  
 4. **Strengthen Migrant Protections**: Enforce bilateral agreements to prevent exploitation and ensure fair wages.  
-5. **Mental Health Support**: Fund counseling services for migrants and families left behind.  
-
 ---
 
 ### **Conclusion**  

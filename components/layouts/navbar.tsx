@@ -212,48 +212,10 @@ function Navbar() {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-stretch space-x-8">
               <div className="flex items-center space-x-4">
-                {!data.onHoverPicture ? (
-                  <img
-                    onMouseEnter={() =>
-                      setData({
-                        ...data,
-                        onHoverPicture: true,
-                      })
-                    }
-                    className="w-10 h-10 rounded-full"
-                    src="/assets/foto_profil_linkedin.jpeg"
-                    alt="Profile Picture"
-                  />
-                ) : (
-                  <img
-                    onMouseLeave={() =>
-                      setData({
-                        ...data,
-                        onHoverPicture: false,
-                      })
-                    }
-                    className="w-10 h-10 rounded-full"
-                    src="/assets/foto_profil_twitter.jpeg"
-                    alt="Profile Picture"
-                  />
-                )}
-                {/* <div className="font-medium dark:text-white">
-                    <div>Jese Leos</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-                </div> */}
+
               </div>
 
               {/* <LanguageDropdown handleChange={handleChangeLanguage} /> */}
-              <button>
-                <Badge style="rounded-md border-gray-300">
-                  <code
-                    className="text-base font-semibold"
-                    onClick={toggleCommandPallete}
-                  >
-                    /cmd
-                  </code>
-                </Badge>
-              </button>
             </div>
             <div>
               <div className="flex items-center lg:order-2">
