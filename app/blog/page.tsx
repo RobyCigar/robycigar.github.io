@@ -3,6 +3,15 @@ import { getSortedPostsData } from "@/utils/getSortedPostsData";
 import Link from "next/link";
 import { ArrowRight, Home, Info, FileText, Send } from "lucide-react";
 
+const convertDate = (date: string) => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(date).toLocaleDateString(undefined, options);
+};
+
 export default function Blog() {
   const allPostsData = getSortedPostsData();
   const [activeTab, setActiveTab] = ['Coding', () => {
@@ -64,13 +73,16 @@ export default function Blog() {
                   className="flex items-start gap-6 group cursor-pointer"
                 >
                   <img
-                    src={article.image ?? "https://picsum.photos/200/300?random=" + index}
+                    src={
+                      article.image ??
+                      "https://picsum.photos/200/300?random=" + index
+                    }
                     alt={article.title}
                     className="w-24 h-24 rounded-lg object-cover"
                   />
                   <div className="flex-1">
                     <span className="text-gray-400 text-sm">
-                      {article.date}
+                      {convertDate(article.date)}
                     </span>
                     <h2 className="text-xl font-semibold mt-1 mb-2 group-hover:text-blue-500 transition-colors">
                       {article.title}

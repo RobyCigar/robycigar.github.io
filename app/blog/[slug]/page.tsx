@@ -2,6 +2,15 @@ import { getAllPostIds, getPostData } from "@/utils/getSortedPostsData";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
 
+const convertDate = (date: string) => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(date).toLocaleDateString(undefined, options);
+}
+
 export default async function Post({ params }: any) {
   const postData: any = await getPostData(params.slug);
 
@@ -31,7 +40,7 @@ export default async function Post({ params }: any) {
             {postData.title}
           </h1>
           <p className="dark:text-gray-200 pt-2 pb-10">
-            Ditulis pada: {postData.date}
+            Ditulis pada: {convertDate(postData.date)}
             <br />
             Penulis: Rabih Utomo
             {/* <br />
