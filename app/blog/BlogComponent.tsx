@@ -116,7 +116,7 @@ export default function Blog({ initialPosts }: any) {
                     <img
                       src={
                         article.image ??
-                        `https://picsum.photos/200/300?random=${index}`
+                        `https://picsum.photos/200/300?random=${index}-${article.id}`
                       }
                       alt={article.title || "Article image"}
                       className="w-full h-28 md:w-24 md:h-24 rounded-lg object-cover"

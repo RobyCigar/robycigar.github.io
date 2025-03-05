@@ -2,7 +2,7 @@
 title: "#KaburAjaDulu: Long Term Implication of Mass Emigration for Indonesia"
 date: "2025-02-27"
 excerpt: "The #KaburAjaDulu (\"Just Flee First\") trend reflects Indonesian netizens' frustration with domestic challenges like unemployment, low wages, and political disillusionment. If large-scale emigration occurs, Indonesia could face multifaceted consequences."
-tags: ["programming", "story"]
+tags: ["viral", "story"]
 category: "Life"
 ---
 
