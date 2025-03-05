@@ -27,7 +27,7 @@ interface BlogProps {
   initialPosts: Post[];
 }
 
-export default function Blog({ initialPosts }: BlogProps) {
+export default function Blog({ initialPosts }: any) {
   const [activeTab, setActiveTab] = useState<string>("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
@@ -36,7 +36,7 @@ export default function Blog({ initialPosts }: BlogProps) {
   const categories = useMemo(() => {
     const categorySet = new Set([
       "All",
-      ...initialPosts.map((post) => post.category),
+      ...initialPosts.map((post: Post) => post.category),
     ]);
     return Array.from(categorySet);
   }, [initialPosts]);
@@ -45,7 +45,7 @@ export default function Blog({ initialPosts }: BlogProps) {
   const filteredPosts = useMemo(() => {
     return activeTab === "All"
       ? initialPosts
-      : initialPosts.filter((post) => post.category === activeTab);
+      : initialPosts.filter((post: Post) => post.category === activeTab);
   }, [activeTab, initialPosts]);
 
   // Pagination logic
@@ -107,7 +107,7 @@ export default function Blog({ initialPosts }: BlogProps) {
             {/* Articles */}
             {currentPosts.length > 0 ? (
               <div className="mt-8 space-y-8">
-                {currentPosts.map((article, index) => (
+                {currentPosts.map((article: Post, index: number) => (
                   <Link
                     href={`blog/${article.id}`}
                     key={article.id}
