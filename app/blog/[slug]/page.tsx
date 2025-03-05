@@ -29,8 +29,8 @@ interface PostProps {
   };
 }
 
-export default async function Post({ params }: PostProps) {
-  const postData: PostData = await getPostData(params.slug);
+export default async function Post({ params }: any) {
+  const postData: any = await getPostData(params.slug);
 
   const SEO = {
     title: postData.title,
@@ -111,7 +111,7 @@ export default async function Post({ params }: PostProps) {
                   <div className="flex items-center space-x-2">
                     <Tag className="w-5 h-5" />
                     <div className="flex space-x-2">
-                      {postData.tags.map((tag) => (
+                      {postData.tags.map((tag: string) => (
                         <span
                           key={tag}
                           className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-md text-xs"

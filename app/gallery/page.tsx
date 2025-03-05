@@ -41,7 +41,7 @@ const Hobby = () => {
     },
   ];
 
-  const renderGalleryItem = (item, index) => {
+  const renderGalleryItem = (item: any, index: number) => {
     const commonClasses =
       "md:text-base text-sm relative group overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out";
 
