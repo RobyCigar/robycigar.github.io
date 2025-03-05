@@ -109,7 +109,7 @@ const Portfolio = () => {
         <Header>{t.list_of_portfolio}</Header>
         <Paragraph>{t.portfolio_desc}</Paragraph>
       </div>
-      <div className="grid lg:max-w-6xl lg:mx-auto gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+      <div className="grid lg:max-w-5xl lg:mx-auto gap-8 mb-6 lg:mb-16 md:grid-cols-2">
         {portfolios.map((portfolio) => {
           const isCandle = portfolio.title.toLowerCase().includes("candle");
           return (
