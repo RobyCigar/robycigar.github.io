@@ -1,8 +1,24 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { NextSeo } from "next-seo";
-import { getPostData, getAllPostIds } from "@/utils/getSortedPostsData";
-import { Calendar, User, Tag } from "lucide-react";
+import {
+  getPostData,
+  getAllPostIds,
+  getSortedPostsData,
+} from "@/utils/getSortedPostsData";
+import {
+  Calendar,
+  User,
+  Tag,
+  Home,
+  ChevronRight,
+  Copy,
+  Check,
+  BookOpen,
+} from "lucide-react";
+// import { motion } from "framer-motion";
+import CopyLinkButton from "./CopyLinkButton";
 
 // Utility function to convert date
 const convertDate = (date: string) => {
@@ -14,6 +30,15 @@ const convertDate = (date: string) => {
   return new Date(date).toLocaleDateString(undefined, options);
 };
 
+// Utility function for reading time estimation
+const estimateReadingTime = (content: string) => {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime;
+};
+
+
 // Types for better type safety
 interface PostData {
   title: string;
@@ -21,23 +46,103 @@ interface PostData {
   desc: string;
   contentHtml: string;
   tags?: string[];
+  slug: string;
 }
 
-interface PostProps {
-  params: {
-    slug: string;
-  };
-}
+
+// Dynamic Breadcrumb Component
+const Breadcrumb = ({
+  postTitle,
+  slug,
+}: {
+  postTitle: string;
+  slug: string;
+}) => {
+  return (
+    <nav
+      className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 mb-6"
+      aria-label="Breadcrumb"
+    >
+      <Link
+        href="/"
+        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center"
+      >
+        <Home className="w-4 h-4 mr-1" />
+        Home
+      </Link>
+      <ChevronRight className="w-4 h-4" />
+      <Link
+        href="/blog"
+        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+      >
+        Blog
+      </Link>
+      <ChevronRight className="w-4 h-4" />
+      <span className="font-semibold truncate max-w-[200px]">{postTitle}</span>
+    </nav>
+  );
+};
+
+// Related Posts Component
+const RelatedPosts = ({
+  currentSlug,
+  posts,
+}: {
+  currentSlug: string;
+  posts: PostData[];
+}) => {
+  const relatedPosts = posts
+    .filter(
+      (post) =>
+        post.slug !== currentSlug &&
+        post.tags?.some((tag) =>
+          posts.find((p) => p.slug === currentSlug)?.tags?.includes(tag)
+        )
+    )
+    .slice(0, 3);
+
+  if (relatedPosts.length === 0) return null;
+
+  return (
+    <section className="mt-12 border-t pt-8 dark:border-gray-700">
+      <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+        Related Posts
+      </h3>
+      <div className="grid md:grid-cols-3 gap-6">
+        {relatedPosts.map((post) => (
+          <div
+            key={post.slug}
+            className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md"
+          >
+            <Link href={`/blog/${post.slug}`} className="block">
+              <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400">
+                {post.title}
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                {post.desc}
+              </p>
+              <div className="mt-4 flex items-center text-xs text-gray-500 dark:text-gray-400">
+                <Calendar className="w-4 h-4 mr-2" />
+                {convertDate(post.date)}
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default async function Post({ params }: any) {
   const postData: any = await getPostData(params.slug);
+  const allPosts: any = await getSortedPostsData();
 
   const SEO = {
     title: postData.title,
     description: postData.desc,
     openGraph: {
       type: "website",
-      url: "https://www.rabihutomo.com/og-image.png",
+      url: `https://www.rabihutomo.com/blog/${params.slug}`,
       title: postData.title,
       description: postData.desc,
     },
@@ -45,6 +150,13 @@ export default async function Post({ params }: any) {
 
   // Generate a random background image URL from Lorem Picsum
   const backgroundImageUrl = `https://picsum.photos/seed/${params.slug}/1600/900`;
+
+  // Reading time calculation
+  const readingTime = estimateReadingTime(
+    postData.contentHtml.replace(/<[^>]*>/g, "")
+  );
+
+
 
   return (
     <>
@@ -78,6 +190,9 @@ export default async function Post({ params }: any) {
             className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-2xl rounded-xl 
             overflow-hidden p-6 sm:p-8 md:p-12 border border-gray-200 dark:border-gray-700"
           >
+            {/* Breadcrumb */}
+            <Breadcrumb postTitle={postData.title} slug={params.slug} />
+
             {/* Header Section */}
             <header className="mb-10 border-b pb-6 dark:border-gray-700 relative">
               <div className="absolute top-0 right-0 text-4xl">
@@ -105,6 +220,13 @@ export default async function Post({ params }: any) {
                   <User className="w-5 h-5" />
                   <span>Rabih Utomo 👨‍💻</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-5 h-5" />
+                  <span>{readingTime} min read</span>
+                </div>
+
+                {/* Copy Link Button */}
+                <CopyLinkButton/>
 
                 {/* Tags */}
                 {postData.tags && postData.tags.length > 0 && (
@@ -137,6 +259,9 @@ export default async function Post({ params }: any) {
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
             />
           </article>
+
+          {/* Related Posts */}
+          <RelatedPosts currentSlug={params.slug} posts={allPosts} />
         </div>
 
         {/* Footer Decoration */}
