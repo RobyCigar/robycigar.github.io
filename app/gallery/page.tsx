@@ -43,7 +43,7 @@ const Hobby = () => {
 
   const renderGalleryItem = (item, index) => {
     const commonClasses =
-      "relative group overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out";
+      "md:text-base text-sm relative group overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out";
 
     switch (item.type) {
       case "spotify-artist":
@@ -103,7 +103,7 @@ const Hobby = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-red-500/50 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
             <div className="relative z-20 p-4">
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="mb-4  font-light text-gray-500 dark:text-gray-400">
+              <p className="mb-4 text-sm md:text-base font-light text-gray-500 dark:text-gray-400">
                 {item.description}
               </p>
               <div className="relative w-full aspect-video">

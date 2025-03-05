@@ -1,26 +1,21 @@
-"use client"
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import { useTranslation } from '@/app/i18n';
-import Link from 'next/link';
-import { ArrowTopRightOnSquareIcon, BookmarkIcon, HeartIcon, HomeIcon, MusicalNoteIcon, PhotoIcon } from '@heroicons/react/24/outline';
-import React, { ReactElement, useEffect, useState, useRef } from 'react'
-import LanguageDropdown from '../molecules/navbar/language-dropdown';
-import { useRouter } from "next/navigation";
-import CommandPallete from '../molecules/command-pallete';
-import Badge from '../atoms/badge';
+import { useTranslation } from "@/app/i18n";
+import Link from "next/link";
 import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import {
-  ArrowPathIcon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+  ArrowTopRightOnSquareIcon,
+  BookmarkIcon,
+  HeartIcon,
+  HomeIcon,
+  MusicalNoteIcon,
+  PhotoIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { Combobox } from '@headlessui/react';
+import React, { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+import CommandPallete from "../molecules/command-pallete";
+import { Combobox } from "@headlessui/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface MenuI {
   label: string;
@@ -31,43 +26,55 @@ interface MenuI {
 }
 
 export const items: MenuI[] = [
-      {
-        label: "Me",
-        desc: "Tentang Rabih",
-        link: "/",
-        icon: <HomeIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-      {
-        label: "Portfolio",
-        desc: "Karya yang pernah dibuat",
-        link: "/portfolio",
-        icon: <BookmarkIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-      {
-        label: "Gallery",
-        desc: "Kumpulan media foto/video",
-        link: "/gallery",
-        icon: <PhotoIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-      {
-        label: "Friends",
-        desc: "List teman",
-        link: "/friends",
-        icon: <HeartIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-      {
-        label: "Certification",
-        desc: "Sertifikasi",
-        link: "/certification",
-        icon: <MusicalNoteIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-      {
-        label: "Blog",
-        link: "/blog",
-        desc: "Tulisan",
-        icon: <ArrowTopRightOnSquareIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />,
-      },
-    ];
+  {
+    label: "Me",
+    desc: "Tentang Rabih",
+    link: "/",
+    icon: (
+      <HomeIcon className="w-6 h-6 text-gray-400 group-hover:text-gray-600" />
+    ),
+  },
+  {
+    label: "Portfolio",
+    desc: "Karya yang pernah dibuat",
+    link: "/portfolio",
+    icon: (
+      <BookmarkIcon className="w-6 h-6 text-gray-400 group-hover:text-gray-600" />
+    ),
+  },
+  {
+    label: "Gallery",
+    desc: "Kumpulan media foto/video",
+    link: "/gallery",
+    icon: (
+      <PhotoIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />
+    ),
+  },
+  {
+    label: "Friends",
+    desc: "List teman",
+    link: "/friends",
+    icon: (
+      <HeartIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />
+    ),
+  },
+  {
+    label: "Certification",
+    desc: "Sertifikasi",
+    link: "/certification",
+    icon: (
+      <MusicalNoteIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />
+    ),
+  },
+  {
+    label: "Blog",
+    link: "/blog",
+    desc: "Tulisan",
+    icon: (
+      <ArrowTopRightOnSquareIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />
+    ),
+  },
+];
 
 const CardOverlay = ({ isOpen, onClose, children }: any) => {
   const cardRef = useRef<any>(null);
@@ -91,116 +98,145 @@ const CardOverlay = ({ isOpen, onClose, children }: any) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/50">
-      <div
-        ref={cardRef}
-        className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-start justify-center bg-black/50"
       >
-        <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
-          <div className="p-4">{children}</div>
-        </div>
-      </div>
-    </div>
+        <motion.div
+          ref={cardRef}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -50, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="absolute z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4"
+        >
+          <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-2xl ring-1 ring-gray-900/5">
+            {children}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
+
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
+
 const DropdownList = ({ isOpen, onClose, items }: any) => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <CardOverlay isOpen={isOpen} onClose={onClose}>
-      <Combobox>
-        <Combobox.Options
-          static
-          className=""
-        >
-          {items.map((item: any) => (
-            <Combobox.Option
-              key={item.label}
-              value={item}
-              onClick={item.click ? item.click : () => router.push(item.link) }
-              className={({ active }) =>
-                classNames(
-                  "flex cursor-pointer select-none rounded-xl p-3",
-                  active && "bg-gray-100"
-                )
-              }
-            >
-              {({ active }) => (
-                <>
-                  <div
-                    className={classNames(
-                      "flex h-10 w-10 flex-none items-center justify-center rounded-lg",
-                      item.color
-                    )}
-                  >
-                    {item.icon}
-                    {/* <item.icon
-                    className="h-6 w-6 text-white"
-                    aria-hidden="true"
-                  /> */}
-                  </div>
-                  <div className="ml-4 flex-auto">
-                    <p
-                      className={classNames(
-                        "text-sm font-medium",
-                        active ? "text-gray-900" : "text-gray-700"
-                      )}
-                    >
-                      {item.label}
-                    </p>
-                    <p
-                      className={classNames(
-                        "text-sm",
-                        active ? "text-gray-700" : "text-gray-500"
-                      )}
-                    >
-                      {item.label}
-                    </p>
-                  </div>
-                </>
-              )}
-            </Combobox.Option>
-          ))}
-        </Combobox.Options>
-        {/* <CardOverlay isOpen={isOpen} onClose={onClose}>
-        {items.map((item: any) => (
-          <div
-            onClick={items?.click ? items.click : undefined}
-            className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50"
+      <div className="p-2">
+        <div className="flex justify-end p-2">
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700 transition-colors"
           >
-            <div>
-              <Link href={item.link} className="font-semibold text-gray-900">
-                {item.label}
-                <span className="absolute inset-0" />
-              </Link>
-            </div>
-          </div>
-        ))}
-      </CardOverlay> */}
-      </Combobox>
+            <XMarkIcon className="w-6 h-6" />
+          </button>
+        </div>
+        <Combobox>
+          <Combobox.Options static className="space-y-1 p-2">
+            {items.map((item: any, index: number) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                }}
+              >
+                <Combobox.Option
+                  value={item}
+                  onClick={
+                    item.click ? item.click : () => router.push(item.link)
+                  }
+                  className={({ active }) =>
+                    classNames(
+                      "flex cursor-pointer select-none rounded-xl p-3 group transition-all duration-200",
+                      active ? "bg-gray-100 shadow-sm" : "hover:bg-gray-50"
+                    )
+                  }
+                >
+                  {({ active }) => (
+                    <>
+                      <div
+                        className={classNames(
+                          "flex h-10 w-10 flex-none items-center justify-center rounded-lg transition-all duration-200",
+                          active
+                            ? "bg-blue-100 text-blue-600"
+                            : "bg-gray-100 text-gray-500"
+                        )}
+                      >
+                        {item.icon}
+                      </div>
+                      <div className="ml-4 flex-auto">
+                        <p
+                          className={classNames(
+                            "text-sm font-semibold transition-colors duration-200",
+                            active ? "text-gray-900" : "text-gray-700"
+                          )}
+                        >
+                          {item.label}
+                        </p>
+                        <p
+                          className={classNames(
+                            "text-sm transition-colors duration-200",
+                            active ? "text-gray-700" : "text-gray-500"
+                          )}
+                        >
+                          {item.desc}
+                        </p>
+                      </div>
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{
+                          opacity: active ? 1 : 0,
+                          x: active ? 0 : -10,
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                        className="flex items-center text-gray-400"
+                      >
+                        <ArrowTopRightOnSquareIcon className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                      </motion.div>
+                    </>
+                  )}
+                </Combobox.Option>
+              </motion.div>
+            ))}
+          </Combobox.Options>
+        </Combobox>
+      </div>
     </CardOverlay>
   );
 };
 
 function Navbar() {
-  const translation = useTranslation()
-  const router = useRouter()
   const [data, setData] = useState({
     commandPalleteOpen: false,
     onHoverPicture: false,
     showItemList: false,
-  })
-    const toggleCommandPallete = () => {
-      setData({
-        ...data,
-        commandPalleteOpen: !data.commandPalleteOpen
-      })
-    }
-    const toggleBurger = () => {
-      setData(prev => ({...prev, showItemList: !data.showItemList}))
-    }
+  });
+  const toggleCommandPallete = () => {
+    setData({
+      ...data,
+      commandPalleteOpen: !data.commandPalleteOpen,
+    });
+  };
+  const toggleBurger = () => {
+    setData((prev) => ({ ...prev, showItemList: !data.showItemList }));
+  };
   return (
     <>
       <CommandPallete
@@ -212,10 +248,8 @@ function Navbar() {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-stretch space-x-8">
               <div className="flex items-center space-x-4">
-
+                {/* Additional content can be added here if needed */}
               </div>
-
-              {/* <LanguageDropdown handleChange={handleChangeLanguage} /> */}
             </div>
             <div>
               <div className="flex items-center lg:order-2">
@@ -289,4 +323,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

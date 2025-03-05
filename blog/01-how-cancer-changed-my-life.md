@@ -3,6 +3,7 @@ title: "How Cancer Changed My Life"
 date: "2025-02-03"
 excerpt: "For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs."
 tags: ["programming", "story"]
+category: "Life"
 ---
 
 For two years, I worked as a software engineer at a private company. My work hours were the usual 9-to-5, and my salary was more than enough for my needs. It felt like a steady and reliable job, the kind of job that many people aim for. But everything changed in June 2024 when I found out I had a lump in my neck and turns out it is a fucking cancer. Something that I have never imagined before—a healthy, young person like me, who has never smoked or consumed alcohol, being diagnosed with this shit. This news turned my world upside down and made me rethink my career and what I really wanted out of life.
