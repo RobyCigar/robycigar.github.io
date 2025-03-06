@@ -156,7 +156,10 @@ const DropdownList = ({ isOpen, onClose, items }: any) => {
                 <Combobox.Option
                   value={item}
                   onClick={
-                    item.click ? item.click : () => router.push(item.link)
+                    item.click ? item.click : () => {
+                      router.push(item.link)
+                      onClose()
+                    }
                   }
                   className={({ active }) =>
                     classNames(
@@ -244,7 +247,7 @@ function Navbar() {
         setOpen={toggleCommandPallete}
       />
       <header className="fixed z-10 w-screen">
-        <nav className="backdrop-blur-sm bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
+        <nav className="backdrop-blur-sm w-full bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-stretch space-x-8">
               <Link href="/" className="flex items-center space-x-4">

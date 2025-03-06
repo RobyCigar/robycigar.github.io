@@ -63,9 +63,9 @@ export default function Blog({ initialPosts }: any) {
   return (
     <div className="flex-1">
       <div className="flex">
-        <div className="flex-1 max-w-4xl mx-auto px-8 py-12">
+        <div className="flex-1 w-full max-w-4xl mx-auto py-12">
           {/* Header */}
-          <div className="mb-12">
+          <div className="mb-12 px-8">
             <div className="flex items-center gap-6 mb-6">
               <img
                 src="/profpic.jpeg"
