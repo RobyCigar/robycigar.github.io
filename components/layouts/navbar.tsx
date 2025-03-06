@@ -247,9 +247,10 @@ function Navbar() {
         <nav className="backdrop-blur-sm bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-stretch space-x-8">
-              <div className="flex items-center space-x-4">
+              <Link href="/" className="flex items-center space-x-4">
+                rabihutomo.com
                 {/* Additional content can be added here if needed */}
-              </div>
+              </Link>
             </div>
             <div>
               <div className="flex items-center lg:order-2">

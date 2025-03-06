@@ -91,16 +91,15 @@ const RelatedPosts = ({
   currentSlug: string;
   posts: PostData[];
 }) => {
+  const currentPost = posts.find((p) => p.slug === currentSlug);
   const relatedPosts = posts
     .filter(
       (post) =>
         post.slug !== currentSlug &&
-        post.tags?.some((tag) =>
-          posts.find((p) => p.slug === currentSlug)?.tags?.includes(tag)
-        )
+        post.tags?.some((tag) => currentPost?.tags?.includes(tag))
     )
     .slice(0, 3);
-
+    console.log({relatedPosts})
   if (relatedPosts.length === 0) return null;
 
   return (
@@ -149,7 +148,7 @@ export default async function Post({ params }: any) {
   };
 
   // Generate a random background image URL from Lorem Picsum
-  const backgroundImageUrl = `https://picsum.photos/seed/${params.slug}/1600/900`;
+  // const backgroundImageUrl = `https://picsum.photos/seed/${params.slug}/1600/900`;
 
   // Reading time calculation
   const readingTime = estimateReadingTime(
@@ -169,10 +168,7 @@ export default async function Post({ params }: any) {
         />
       </Head>
       <main
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat transition-colors duration-300"
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url(${backgroundImageUrl})`,
-        }}
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat transition-colors duration-300 max-w-[1200px] mx-auto my-4"
       >
         {/* Decorative Emoji Floating Elements */}
         <div className="fixed top-20 left-10 text-6xl opacity-20 rotate-12 hidden md:block">
@@ -185,7 +181,7 @@ export default async function Post({ params }: any) {
           ✨
         </div>
 
-        <div className="container mx-auto px-4 py-12 lg:px-8 xl:max-w-5xl relative z-10">
+        <div className="">
           <article
             className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-2xl rounded-xl 
             overflow-hidden p-6 sm:p-8 md:p-12 border border-gray-200 dark:border-gray-700"
@@ -249,7 +245,7 @@ export default async function Post({ params }: any) {
 
             {/* Content Section */}
             <div
-              className="prose dark:prose-invert prose-lg max-w-none 
+              className="prose text-base md:text-md dark:prose-invert prose-lg max-w-none 
               prose-headings:text-gray-900 dark:prose-headings:text-gray-100
               prose-a:text-blue-600 dark:prose-a:text-blue-400
               prose-strong:text-gray-900 dark:prose-strong:text-gray-100
