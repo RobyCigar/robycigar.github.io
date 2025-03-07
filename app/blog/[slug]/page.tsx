@@ -91,7 +91,7 @@ const RelatedPosts = ({
   currentSlug: string;
   posts: PostData[];
 }) => {
-  const currentPost = posts.find((p) => p.slug === currentSlug);
+  const currentPost = posts.find((p) => p.id === currentSlug);
   const relatedPosts = posts
     .filter(
       (post) =>
@@ -99,21 +99,20 @@ const RelatedPosts = ({
         post.tags?.some((tag) => currentPost?.tags?.includes(tag))
     )
     .slice(0, 3);
-    console.log({relatedPosts})
   if (relatedPosts.length === 0) return null;
 
   return (
-    <section className="mt-12 border-t pt-8 dark:border-gray-700">
+    <section className="my-12 border-t pt-8 dark:border-gray-700">
       <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
         Related Posts
       </h3>
       <div className="grid md:grid-cols-3 gap-6">
         {relatedPosts.map((post) => (
           <div
-            key={post.slug}
+            key={post.id}
             className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md"
           >
-            <Link href={`/blog/${post.slug}`} className="block">
+            <Link href={`/blog/${post.id}`} className="block">
               <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400">
                 {post.title}
               </h4>
@@ -133,7 +132,8 @@ const RelatedPosts = ({
 };
 
 export default async function Post({ params }: any) {
-  const postData: any = await getPostData(params.slug);
+  const slug = await params.slug;
+  const postData: any = await getPostData(slug);
   const allPosts: any = await getSortedPostsData();
 
   const SEO = {
@@ -141,14 +141,14 @@ export default async function Post({ params }: any) {
     description: postData.desc,
     openGraph: {
       type: "website",
-      url: `https://www.rabihutomo.com/blog/${params.slug}`,
+      url: `https://www.rabihutomo.com/blog/${slug}`,
       title: postData.title,
       description: postData.desc,
     },
   };
 
   // Generate a random background image URL from Lorem Picsum
-  // const backgroundImageUrl = `https://picsum.photos/seed/${params.slug}/1600/900`;
+  // const backgroundImageUrl = `https://picsum.photos/seed/${slug}/1600/900`;
 
   // Reading time calculation
   const readingTime = estimateReadingTime(
@@ -187,7 +187,7 @@ export default async function Post({ params }: any) {
             overflow-hidden p-6 sm:p-8 md:p-12 border border-gray-200 dark:border-gray-700"
           >
             {/* Breadcrumb */}
-            <Breadcrumb postTitle={postData.title} slug={params.slug} />
+            <Breadcrumb postTitle={postData.title} slug={slug} />
 
             {/* Header Section */}
             <header className="mb-10 border-b pb-6 dark:border-gray-700 relative">
@@ -257,7 +257,7 @@ export default async function Post({ params }: any) {
           </article>
 
           {/* Related Posts */}
-          <RelatedPosts currentSlug={params.slug} posts={allPosts} />
+          <RelatedPosts currentSlug={slug} posts={allPosts} />
         </div>
 
         {/* Footer Decoration */}
