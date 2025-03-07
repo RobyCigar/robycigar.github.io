@@ -4,6 +4,7 @@ date: "2025-03-07"
 excerpt: "TikTok's algorithm analyzes user data to determine the content that appears on a user's \"For You\" page (FYP). The FYP is personalized for each user and displays videos TikTok thinks the user will enjoy"
 tags: ["coding", "algoritms"]
 category: "Coding"
+image: "/assets/LYVdy3W4naaJpE1P-generated_image.jpg"
 ---
 
 ### Introduction

@@ -95,7 +95,7 @@ const RelatedPosts = ({
   const relatedPosts = posts
     .filter(
       (post) =>
-        post.slug !== currentSlug &&
+        post.id !== currentSlug &&
         post.tags?.some((tag) => currentPost?.tags?.includes(tag))
     )
     .slice(0, 3);
@@ -148,14 +148,14 @@ export default async function Post({ params }: any) {
   };
 
   // Generate a random background image URL from Lorem Picsum
-  // const backgroundImageUrl = `https://picsum.photos/seed/${slug}/1600/900`;
+  const backgroundImageUrl = `https://picsum.photos/seed/${slug}/1600/900`;
 
   // Reading time calculation
   const readingTime = estimateReadingTime(
     postData.contentHtml.replace(/<[^>]*>/g, "")
   );
 
-
+  console.log({postData})
 
   return (
     <>
@@ -167,9 +167,7 @@ export default async function Post({ params }: any) {
           openGraph={SEO.openGraph}
         />
       </Head>
-      <main
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat transition-colors duration-300 max-w-[1200px] mx-auto my-4"
-      >
+      <main className="relative min-h-screen bg-cover bg-center bg-no-repeat transition-colors duration-300 max-w-[1200px] mx-auto my-4">
         {/* Decorative Emoji Floating Elements */}
         <div className="fixed top-20 left-10 text-6xl opacity-20 rotate-12 hidden md:block">
           🚀
@@ -188,7 +186,22 @@ export default async function Post({ params }: any) {
           >
             {/* Breadcrumb */}
             <Breadcrumb postTitle={postData.title} slug={slug} />
-
+            {/* Header Image */}
+            <div className="w-full h-64 md:h-96 overflow-hidden rounded-lg mb-8">
+              {postData.image ? (
+                <img
+                  src={postData.image}
+                  alt={`${postData.title} header image`}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              ) : (
+                <img
+                  src={backgroundImageUrl}
+                  alt={`${postData.title} header image`}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              )}
+            </div>
             {/* Header Section */}
             <header className="mb-10 border-b pb-6 dark:border-gray-700 relative">
               <div className="absolute top-0 right-0 text-4xl">
@@ -222,7 +235,7 @@ export default async function Post({ params }: any) {
                 </div>
 
                 {/* Copy Link Button */}
-                <CopyLinkButton/>
+                <CopyLinkButton />
 
                 {/* Tags */}
                 {postData.tags && postData.tags.length > 0 && (

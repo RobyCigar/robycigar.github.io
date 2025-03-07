@@ -4,6 +4,7 @@ date: "2025-02-04"
 excerpt: "Semikonduktor adalah material yang memiliki sifat konduktivitas listrik antara konduktor (seperti tembaga) dan isolator (seperti kaca). Material ini biasanya terbuat dari silikon, yang kemudian diolah menjadi komponen elektronik seperti transistor, dioda, dan integrated circuit (IC).."
 tags: ["programming", "story"]
 category: "Tech"
+image: "/assets/ZXDRq42ZMnbnW9i7-generated_image.jpg"
 ---
 
 

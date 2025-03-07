@@ -4,6 +4,7 @@ date: "2025-03-06"
 excerpt: "Sri Rejeki Isman (Sritex), Indonesia's largest textile manufacturer, declared bankruptcy in October 2023, culminating in operational closure by March 2025. This event marks a pivotal moment for Indonesia’s textile industry, affecting thousands of workers and raising questions about sectoral resilience."
 tags: ["business", "economy", "analysis"]
 category: "Business"
+image: "/assets/na9a5Lq51lQPqUnc-generated_image.jpg"
 ---
 
 ### Introduction  
