@@ -9,7 +9,7 @@ function Certification() {
       <div className="m-auto flex justify-center">
         <img
           src="/assets/meme.jpeg"
-          className="rounded-lg max-w-md"
+          className="rounded-lg max-w-sm"
           alt="Meme This is where i put my certification if i had one"
         />
       </div>
