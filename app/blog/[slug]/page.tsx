@@ -41,6 +41,8 @@ const estimateReadingTime = (content: string) => {
 
 // Types for better type safety
 interface PostData {
+  id: string;
+  image?: string;
   title: string;
   date: string;
   desc: string;

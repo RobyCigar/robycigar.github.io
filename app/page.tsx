@@ -51,12 +51,10 @@ function FloatingPaths({ position }: { position: number }) {
   );
 }
 
-export default function BackgroundPaths({
-  title = "Rabih Utomo",
-}: {
-  title?: string;
-}) {
+export default function BackgroundPaths() {
+  const title = "Rabih Utomo";
   const words = title.split(" ");
+
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">

@@ -159,6 +159,7 @@ function MenuTabs() {
                 <Link
                   href={tab.link}
                   key={index}
+                  // @ts-ignore
                   ref={(el) => (tabRefs.current[index] = el)}
                   className={`px-3 py-2 cursor-pointer transition-colors duration-300 h-[30px] ${
                     index === activeIndex
