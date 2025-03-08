@@ -22,9 +22,7 @@ import CopyLinkButton from "./CopyLinkButton";
 // In your app/blog/[slug]/page.tsx
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: {
-  slug: string
-}}): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const slug = params.slug;
   const postData: PostData = await getPostData(slug);
   
