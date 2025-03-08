@@ -19,6 +19,43 @@ import {
 } from "lucide-react";
 // import { motion } from "framer-motion";
 import CopyLinkButton from "./CopyLinkButton";
+// In your app/blog/[slug]/page.tsx
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: {
+  slug: string
+}}): Promise<Metadata> {
+  const slug = params.slug;
+  const postData: PostData = await getPostData(slug);
+  
+  return {
+    title: `${postData.title} | Rabih Utomo`,
+    description: postData.desc,
+    openGraph: {
+      title: postData.title,
+      description: postData.desc,
+      url: `https://www.rabihutomo.com/blog/${slug}`,
+      siteName: 'Rabih Utomo',
+      images: [
+        {
+          url: postData.image || `https://picsum.photos/seed/${slug}/1200/630`,
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: postData.title,
+      description: postData.desc,
+      creator: '@rabihutomo',
+      images: [postData.image || `https://picsum.photos/seed/${slug}/1200/630`],
+    },
+  };
+}
 
 // Utility function to convert date
 const convertDate = (date: string) => {
@@ -146,41 +183,8 @@ export default async function Post({ params }: any) {
     postData.contentHtml.replace(/<[^>]*>/g, "")
   );
 
-  const SEO = {
-    title: postData.title,
-    description: postData.desc,
-    openGraph: {
-      type: "article", // Change from "website" to "article" for blog posts
-      url: `https://www.rabihutomo.com/blog/${slug}`,
-      title: postData.title,
-      description: postData.desc,
-      images: [
-        {
-          url: postData.image || backgroundImageUrl,
-          width: 1200,
-          height: 630,
-          alt: postData.title,
-        },
-      ],
-      site_name: postData.title, // Add your site name
-    },
-    twitter: {
-      handle: "@robycigar", // Your Twitter handle
-      site: "@robycigar", // Your Twitter handle
-      cardType: "summary_large_image", // The Twitter card type
-    },
-  };
-
   return (
     <>
-      <Head>
-        <title>{postData.title}</title>
-        <NextSeo
-          title={SEO.title}
-          description={SEO.description}
-          openGraph={SEO.openGraph}
-        />
-      </Head>
       <main className="relative min-h-screen bg-cover bg-center bg-no-repeat transition-colors duration-300 max-w-[1200px] mx-auto my-4">
         {/* Decorative Emoji Floating Elements */}
         <div className="fixed top-20 left-10 text-6xl opacity-20 rotate-12 hidden md:block">
