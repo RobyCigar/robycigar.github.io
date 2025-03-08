@@ -162,7 +162,7 @@ export default async function Post({ params }: any) {
           alt: postData.title,
         },
       ],
-      site_name: "Rabih Utomo", // Add your site name
+      site_name: postData.title, // Add your site name
     },
     twitter: {
       handle: "@robycigar", // Your Twitter handle
