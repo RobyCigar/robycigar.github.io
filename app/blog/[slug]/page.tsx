@@ -138,17 +138,6 @@ export default async function Post({ params }: any) {
   const postData: any = await getPostData(slug);
   const allPosts: any = await getSortedPostsData();
 
-  const SEO = {
-    title: postData.title,
-    description: postData.desc,
-    openGraph: {
-      type: "website",
-      url: `https://www.rabihutomo.com/blog/${slug}`,
-      title: postData.title,
-      description: postData.desc,
-    },
-  };
-
   // Generate a random background image URL from Lorem Picsum
   const backgroundImageUrl = `https://picsum.photos/seed/${slug}/1600/900`;
 
@@ -157,7 +146,30 @@ export default async function Post({ params }: any) {
     postData.contentHtml.replace(/<[^>]*>/g, "")
   );
 
-  console.log({postData})
+  const SEO = {
+    title: postData.title,
+    description: postData.desc,
+    openGraph: {
+      type: "article", // Change from "website" to "article" for blog posts
+      url: `https://www.rabihutomo.com/blog/${slug}`,
+      title: postData.title,
+      description: postData.desc,
+      images: [
+        {
+          url: postData.image || backgroundImageUrl,
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        },
+      ],
+      site_name: "Rabih Utomo", // Add your site name
+    },
+    twitter: {
+      handle: "@robycigar", // Your Twitter handle
+      site: "@robycigar", // Your Twitter handle
+      cardType: "summary_large_image", // The Twitter card type
+    },
+  };
 
   return (
     <>
