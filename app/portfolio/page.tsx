@@ -142,8 +142,7 @@ const timelines = [
 // Animation variants
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const staggerContainer = {
@@ -169,13 +168,13 @@ const cardHover = {
   },
 };
 
-const TechBadge = ({ tech }) => (
+const TechBadge = ({ tech }: any) => (
   <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mr-2 mb-2">
     {tech}
   </span>
 );
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index }: any) => {
   const isCandle = project.title.toLowerCase().includes("candle");
   return (
     <>
@@ -261,7 +260,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <Container className="py-16">
+    <Container>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 1 : 0 }}
@@ -307,7 +306,7 @@ const Portfolio = () => {
           Small Toy Projects
         </Header>
         <Paragraph>
-          Fun side projects I've built to experiment with new technologies
+          Fun side projects I{"\'"}ve built to experiment with new technologies
         </Paragraph>
       </motion.div>
 
