@@ -4,9 +4,33 @@ import Paragraph from "@/components/atoms/paragraph";
 import Container from "@/components/molecules/landing/container";
 import Header from "@/components/molecules/landing/header";
 import TimelineItem from "@/components/molecules/landing/timeline/item";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "../i18n";
 import Badge from "@/components/atoms/badge";
+import { motion } from "framer-motion";
+
+const toyProjects = [
+  {
+    title: "Pixel Warrior Saga",
+    description:
+      "An immersive RPG game with pixel art style, featuring epic quests and challenging battles.",
+    image:
+      "https://em-content.zobj.net/thumbs/240/google/350/video-game_1f3ae.png",
+    link: "https://pixel-warrior-saga.rabihutomo.com",
+    meta: "Side Project",
+    target: "_blank",
+  },
+  {
+    title: "Treadmill Logger",
+    description:
+      "A simple app to track and visualize treadmill workout sessions and progress over time.",
+    image:
+      "https://em-content.zobj.net/thumbs/240/google/350/running-shoe_1f45f.png",
+    link: "https://treadmill.rabihutomo.com",
+    meta: "Side Project",
+    target: "_blank",
+  },
+];
 
 const portfolios = [
   {
@@ -17,6 +41,7 @@ const portfolios = [
       "https://em-content.zobj.net/thumbs/240/google/350/candle_1f56f-fe0f.png",
     link: "",
     meta: "Private Project",
+    tag: "MVP",
   },
   {
     title: "Personal Project",
@@ -37,7 +62,8 @@ const portfolios = [
   },
   {
     title: "Jiwaku App",
-    description: "Mental health apps, mobile platform, available on google play",
+    description:
+      "Mental health apps, mobile platform, available on google play",
     image: "https://jiwaku.rabihutomo.com/thumbnail.jpeg",
     link: "",
     meta: "Public Access",
@@ -58,6 +84,7 @@ const timelines = [
       Tech: docker, laravel, graphql, php, mysql, web socket
     `,
     date: "13 July 2023 - June 2024",
+    tech: ["Docker", "Laravel", "GraphQL", "PHP", "MySQL", "WebSocket"],
   },
   {
     title: "Prioritas Web Teknologi as **Frontend Engineer**",
@@ -79,6 +106,7 @@ const timelines = [
       Tech: vue 2 & 3, vuex, pinia, jira, docker, typescript
     `,
     date: "13 July 2022 - 13 July 2023",
+    tech: ["Vue 2 & 3", "Vuex", "Pinia", "Jira", "Docker", "TypeScript"],
   },
   {
     title: "Lingotalk as **Frontend Engineer**",
@@ -98,83 +126,249 @@ const timelines = [
     <br/>
       - Make a friends(sadly we can never meet because it was a remote work) 🥹
       `,
+    date: "2021 - 2022",
+    tech: [
+      "Svelte",
+      "ReactJS",
+      "NextJS",
+      "Gitlab",
+      "Figma",
+      "MS Teams",
+      "Trello",
+    ],
   },
 ];
 
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardHover = {
+  rest: {
+    scale: 1,
+    boxShadow:
+      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  },
+  hover: {
+    scale: 1.02,
+    boxShadow:
+      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    transition: { duration: 0.3 },
+  },
+};
+
+const TechBadge = ({ tech }) => (
+  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mr-2 mb-2">
+    {tech}
+  </span>
+);
+
+const ProjectCard = ({ project, index }) => {
+  const isCandle = project.title.toLowerCase().includes("candle");
+  return (
+    <>
+      <motion.div
+        initial="rest"
+        whileHover="hover"
+        variants={cardHover}
+        custom={index}
+        className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 relative dark:border-gray-700"
+      >
+      <motion.div key={project.title} variants={fadeInUp} custom={index}>
+        {isCandle && (
+          <motion.img
+            animate={{ rotate: [-45, -40, -45], y: [0, -5, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            src="/assets/crown.png"
+            alt="Image of crown"
+            className="h-20 -top-10 -left-10 absolute"
+          />
+        )}
+        <a
+          href={project.link}
+          target={project.target || "_self"}
+          className="group relative flex items-center justify-center w-32 p-4"
+        >
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <img
+              className="h-16 w-auto object-contain"
+              src={project.image}
+              alt={project.title}
+            />
+          </motion.div>
+        </a>
+        <div className="p-5 flex-1">
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a
+                href={project.link}
+                target={project.target || "_self"}
+                className="hover:text-blue-600 transition-colors duration-300"
+              >
+                {project.title}
+              </a>
+            </h3>
+            {project.tag && (
+              <Badge style="cursor-default bg-gradient-to-r from-purple-600 to-blue-500 animate-pulse text-white">
+                <p>{project.tag}</p>
+              </Badge>
+            )}
+          </div>
+          <span
+            className={`
+            inline-block px-3 py-1 rounded-full text-sm font-medium mb-3
+            ${
+              project.meta.toLowerCase().includes("restricted") ||
+              project.meta.toLowerCase().includes("private")
+                ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+                : "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+            }
+          `}
+          >
+            {project.meta}
+          </span>
+          <p className="font-light text-gray-600 dark:text-gray-300">
+            {project.description}
+          </p>
+        </div>
+      </motion.div>
+      </motion.div>
+    </>
+  );
+};
+
 const Portfolio = () => {
   const { t } = useTranslation();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <Container>
-      <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">
-        <Header>{t.list_of_portfolio}</Header>
-        <Paragraph>{t.portfolio_desc}</Paragraph>
-      </div>
-      <div className="grid lg:max-w-5xl lg:mx-auto gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-        {portfolios.map((portfolio) => {
-          const isCandle = portfolio.title.toLowerCase().includes("candle");
-          return (
-            <div
-              key={portfolio.title}
-              className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 relative dark:border-gray-700"
-            >
-              {isCandle && (
-                <img
-                  src="/assets/crown.png"
-                  alt="Image of crown"
-                  className="h-20 -top-10 -rotate-45 -left-10 absolute"
-                />
-              )}
-              <a href="#">
-                <img
-                  className="h-16 mx-auto w-32 flex-shrink-0 object-contain px-4 rounded-lg sm:rounded-none sm:rounded-l-lg "
-                  src={portfolio.image}
-                  alt={portfolio.title}
-                />
-              </a>
-              <div className="mx-auto py-5 w-3/4 pr-2">
-                <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
-                  <a href="#">{portfolio.title}</a>
-                  {
-                    isCandle && (
-                      <Badge style="cursor-default">
-                        <p>MVP</p>
-                      </Badge>
-                    )
-                  }
-                </h3>
-                <span
-                  className={[
-                    "text-gray-500 dark:text-gray-400 font-normal",
-                    portfolio.meta.toLowerCase().includes("restricted") ||
-                    portfolio.meta.toLowerCase().includes("private")
-                      ? "text-red-600"
-                      : "text-blue-600",
-                  ].join(" ")}
-                >
-                  {portfolio.meta}
-                </span>
-                <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                  {portfolio.description}
-                </p>
-              </div>
-            </div>
-          );})}
-      </div>{" "}
-      <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">
-        <Header>{t.list_of_work}</Header>
-        <Paragraph>{t.work_desc}</Paragraph>
-      </div>
-      <ol className="relative mx-auto max-w-screen-md border-l border-gray-200 dark:border-gray-700">
-        {timelines.map((timeline) => (
-          <TimelineItem
-            key={timeline.title}
-            title={timeline.title}
-            subtitle={timeline.subtitle}
-            description={timeline.description}
-            date={timeline.date}
-          />
+    <Container className="py-16">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.8 }}
+        className="mx-auto max-w-screen-md text-center mb-16"
+      >
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Header className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t.list_of_portfolio}
+          </Header>
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <Paragraph>{t.portfolio_desc}</Paragraph>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+        className="grid lg:max-w-5xl lg:mx-auto gap-8 mb-16 md:grid-cols-2"
+      >
+        {portfolios.map((portfolio, index) => (
+            <ProjectCard key={portfolio.title} project={portfolio} index={index} />
         ))}
-      </ol>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="mx-auto max-w-screen-md text-center mb-16"
+      >
+        <Header className="bg-gradient-to-r from-green-500 to-teal-400 bg-clip-text text-transparent">
+          Small Toy Projects
+        </Header>
+        <Paragraph>
+          Fun side projects I've built to experiment with new technologies
+        </Paragraph>
+      </motion.div>
+
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+        className="grid lg:max-w-5xl lg:mx-auto gap-8 mb-16 md:grid-cols-2"
+      >
+        {toyProjects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+        ))}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+        className="mx-auto max-w-screen-md text-center mb-16"
+      >
+        <Header className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
+          {t.list_of_work}
+        </Header>
+        <Paragraph>{t.work_desc}</Paragraph>
+      </motion.div>
+
+      <motion.ol
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
+        className="relative mx-auto max-w-screen-md border-l-2 border-gray-200 dark:border-gray-700 pl-6"
+      >
+        {timelines.map((timeline, index) => (
+          <motion.div
+            key={timeline.title}
+            variants={fadeInUp}
+            custom={index}
+            className="mb-10"
+          >
+            <div className="absolute w-3 h-3 rounded-full bg-blue-600 -left-1.5 border border-white dark:border-gray-900 dark:bg-blue-500" />
+            <motion.div
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+            >
+              <TimelineItem
+                title={timeline.title}
+                subtitle={timeline.subtitle}
+                description={timeline.description}
+                date={timeline.date}
+              />
+              <div className="mt-4">
+                {timeline.tech &&
+                  timeline.tech.map((tech) => (
+                    <TechBadge key={tech} tech={tech} />
+                  ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        ))}
+      </motion.ol>
     </Container>
   );
 };

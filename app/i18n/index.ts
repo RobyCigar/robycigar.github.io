@@ -1,12 +1,12 @@
 "use client"
 import { useState, useEffect } from "react"
-import * as config from "@/locales/id/translation.json"
+import * as config from "@/locales/en/translation.json"
 
 export type TranslationType = {
     [K in keyof typeof config]: string
 } | any
 export const useTranslation = ({ reload, setReload }: any = {}): any => {
-    const lang = (typeof window !== "undefined" ? window.localStorage.getItem("lang") : 'id') ?? 'id'
+    const lang = (typeof window !== "undefined" ? window.localStorage.getItem("lang") : 'id') ?? 'en'
     const [language, setLanguage] = useState(lang)
     // const [translation, setTranslation] = useState<TranslationType>({})
     // useEffect(() => {
