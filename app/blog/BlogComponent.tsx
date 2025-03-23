@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Threads from "@/components/atoms/threads";
 
 const convertDate = (date: string) => {
   const options: Intl.DateTimeFormatOptions = {

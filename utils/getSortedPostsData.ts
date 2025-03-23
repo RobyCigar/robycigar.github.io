@@ -49,7 +49,14 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id: string): Promise<any> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+  let fullPath, isMdx = false;
+  if(id.includes('.mdx')) {
+    isMdx = true
+    fullPath = path.join(postsDirectory, `${id}`);
+  } else {
+
+    fullPath = path.join(postsDirectory, `${id}.md`);
+  }
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section

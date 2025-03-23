@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslation } from "../i18n";
 import Container from "@/components/molecules/landing/container";
 import Header from "@/components/molecules/landing/header";
+import SplashCursor from "@/components/atoms/cursor";
 
 const Hobby = () => {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ const Hobby = () => {
     {
       type: "spotify-artist",
       title: "Shiey Inspiration",
-      description: "Shiey is a man who inspired me to travel a lot",
+      description: "Shiey is a man who inspired me to explore places",
       link: "https://www.youtube.com/@shiey",
       embedSrc:
         "https://open.spotify.com/embed/artist/5R4TF0oJIio0fueUmyhY1Q?utm_source=generator&theme=0",
@@ -126,6 +127,7 @@ const Hobby = () => {
 
   return (
     <Container>
+      <SplashCursor/>
       <div className="max-w-4xl mx-auto">
         <Header className="text-left mb-6">Hobby, Things I Like</Header>
         <main className="grid grid-cols-6 gap-6">
