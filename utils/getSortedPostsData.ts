@@ -51,8 +51,9 @@ export function getAllPostIds() {
 export async function getPostData(id: string): Promise<any> {
   let fullPath, isMdx = false;
   if(id.includes('.mdx')) {
-    isMdx = true
-    fullPath = path.join(postsDirectory, `${id}`);
+    // isMdx = true
+    // fullPath = path.join(postsDirectory, `${id}`);
+    return
   } else {
 
     fullPath = path.join(postsDirectory, `${id}.md`);
