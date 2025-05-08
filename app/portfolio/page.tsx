@@ -72,6 +72,17 @@ const portfolios = [
 
 const timelines = [
   {
+    title: "Self-Employed",
+    subtitle: ``,
+    description: `
+      I made the tough decision to leave my previous job—not because of any issues with the work, my boss, or teammates (they were all great!)—but due to personal life circumstances. 
+      Since then, I've been focusing on self-growth, exploring new ideas, and continuing to build and learn through side projects. 
+      I'm also growing my presence as a content creator on Instagram and TikTok, where I’ve built an audience of 10K+ followers by sharing my journey and passions.
+    `,
+    date: "July 2024 - Present",
+    tech: [],
+  },
+  {
     title: "Prioritas Web Teknologi as **Fullstack Engineer**",
     subtitle: ``,
     description: `
