@@ -7,7 +7,7 @@ tags: ["Elon Musk, Donald Trump, politik, teknologi, Amerika Serikat, kontrovers
 
 ---
 
-## Perpecahan Dramatis Antara Elon Musk dan Donald Trump: Dari Sekutu hingga Musuh
+## Drama Antara Elon Musk dan Donald Trump: Dari Sekutu hingga Musuh
 
 Pada tanggal 5 Juni 2025, dunia menyaksikan perpecahan yang mengejutkan antara dua figur terkemuka di Amerika Serikat: Elon Musk, CEO Tesla dan SpaceX, serta Presiden Donald Trump. Apa yang awalnya tampak seperti aliansi politik yang kuat, berubah menjadi pertikaian publik yang penuh dengan saling menyerang melalui media sosial. Bagaimana hubungan mereka bisa berubah drastis seperti ini?
 
