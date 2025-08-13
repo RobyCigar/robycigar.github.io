@@ -50,7 +50,7 @@ interface ImageGalleryItem {
 
 const Hobby = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
 
 
@@ -134,7 +134,7 @@ const Hobby = () => {
 
   // Optimized image load handler
   const handleImageLoad = useCallback((src: string) => {
-    setLoadedImages((prev) => new Set([...prev, src]));
+    setLoadedImages((prev) => (prev.includes(src) ? prev : [...prev, src]));
   }, []);
 
   // Optimized modal handlers
@@ -222,7 +222,7 @@ const Hobby = () => {
           );
 
         case "image":
-          const isLoaded = loadedImages.has(item.src!);
+          const isLoaded = loadedImages.includes(item.src!);
           return (
             <div
               key={`gallery-${index}`}
