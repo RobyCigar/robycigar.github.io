@@ -45,11 +45,4 @@ If you’re dreaming of a change, start small. Try a side hustle. Post that firs
 Thanks for reading—and remember, your *life quality* is worth more than any paycheck.  
 
 ---  
-*Follow my journey on Instagram [@YourHandle] for daily updates, fails, and lessons learned!*  
-
----  
-**Word count**: ~500  
-**Tone**: Friendly, encouraging, relatable.  
-**Key themes**: Work-life balance, humility, health, networking, personal growth.  
-
-Let me know if you’d like to adjust anything! 😊
+*Follow my journey on Instagram [@rabihutomo] for daily updates, fails, and lessons learned!*  
