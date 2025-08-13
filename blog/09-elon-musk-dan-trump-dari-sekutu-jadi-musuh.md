@@ -2,7 +2,7 @@
 title: "Drama Antara Elon Musk dan Donald Trump: Dari Sekutu hingga Musuh"  
 date: "2025-06-06"  
 image: "https://picsum.photos/seed/politics/1200/600"  
-desc: "Analisis mendalam tentang perpecahan antara Elon Musk dan Donald Trump, dari sekutu politik hingga pertikaian publik."  
+excerpt: "Analisis mendalam tentang perpecahan antara Elon Musk dan Donald Trump, dari sekutu politik hingga pertikaian publik."  
 tags: ["Elon Musk, Donald Trump, politik, teknologi, Amerika Serikat, kontroversi"]
 
 ---

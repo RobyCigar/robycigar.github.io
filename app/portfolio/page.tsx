@@ -310,31 +310,6 @@ const Portfolio = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="mx-auto max-w-screen-md text-center mb-16"
-      >
-        <Header className="bg-gradient-to-r from-green-500 to-teal-400 bg-clip-text text-transparent">
-          Small Toy Projects
-        </Header>
-        <Paragraph>
-          Fun side projects I{"\'"}ve built to experiment with new technologies
-        </Paragraph>
-      </motion.div>
-
-      <motion.div
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
-        className="grid lg:max-w-5xl lg:mx-auto gap-8 mb-16 md:grid-cols-2"
-      >
-        {toyProjects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-        ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
         className="mx-auto max-w-screen-md text-center mb-16"
       >
