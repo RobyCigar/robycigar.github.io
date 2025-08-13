@@ -78,13 +78,6 @@ const Hobby = () => {
       embedSrc:
         "https://open.spotify.com/embed/track/5hVAQTNarrb3lmWqg9Ens4?utm_source=generator",
     },
-    {
-      type: "image",
-      title: "Mountain Exploration",
-      description: "I like exploring new places",
-      src: "/assets/toomas-tartes.jpg",
-      alt: "Hiking in the mountain",
-    },
   ], []);
 
   const imageGallery: ImageGalleryItem[] = useMemo( () => ([
@@ -293,7 +286,7 @@ const Hobby = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {imageGallery.map((image, index) => {
-                const isLoaded = loadedImages.has(image.src);
+                const isLoaded = loadedImages.includes(image.src);
                 return (
                   <div
                     key={`photo-${index}`}
