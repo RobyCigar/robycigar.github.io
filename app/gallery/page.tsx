@@ -80,50 +80,53 @@ const Hobby = () => {
     },
   ], []);
 
-  const imageGallery: ImageGalleryItem[] = useMemo( () => ([
-    {
-      src: "/assets/gallery/DSCF0477.JPG",
-      alt: "Fun Trail Run Session",
-      title: "Trail Run Session",
-      description: "Running through the trails with friends",
-    },
-    {
-      src: "/assets/gallery/DSCF0480.JPG",
-      alt: "Mountain View",
-      title: "Mountain View",
-      description: "A breathtaking view from the top of the mountain",
-    },
-    {
-      src: "/assets/gallery/DSCF0481.JPG",
-      alt: "Sunset Over the Lake",
-      title: "Sunset Over the Lake",
-      description: "Capturing the beauty of nature at sunset",
-    },
-    {
-      src: "/assets/gallery/DSCF0478.JPG",
-      alt: "Camping Under the Stars",
-      title: "Camping Under the Stars",
-      description: "A peaceful night camping under a starry sky",
-    },
-    {
-      src: "/assets/gallery/DSCF0479.JPG",
-      alt: "Exploring the Forest",
-      title: "Exploring the Forest",
-      description: "A day spent exploring the lush forest trails",
-    },
-    {
-      src: "/assets/gallery/1.jpeg",
-      alt: "Fun Trail Run Session",
-      title: "Trail Run Session",
-      description: "Running through the trails with friends",
-    },
-    {
-      src: "/assets/gallery/2.jpeg",
-      alt: "Fun Trail Run Session",
-      title: "Trail Run Session",
-      description: "Running through the trails with friends",
-    },
-  ]), []);
+  const imageGallery: ImageGalleryItem[] = useMemo(
+    () => [
+      {
+        src: "/assets/gallery/compressed/1.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/2.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/3.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/4.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/5.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/6.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+      {
+        src: "/assets/gallery/compressed/7.jpeg",
+        alt: "Fun Trail Run Session",
+        title: "Trail Run Session",
+        description: "Running through the trails with friends",
+      },
+    ],
+    []
+  );
 
   // Optimized image load handler
   const handleImageLoad = useCallback((src: string) => {
@@ -290,7 +293,7 @@ const Hobby = () => {
                 return (
                   <div
                     key={`photo-${index}`}
-                    className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transform hover:scale-[1.03] cursor-pointer transition-[transform,box-shadow] duration-500 ease-out"
+                    className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl cursor-pointer transition-shadow duration-300"
                     onClick={() => openModal(image.src)}
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">
@@ -301,7 +304,7 @@ const Hobby = () => {
                         src={image.src}
                         alt={image.alt}
                         fill
-                        className={`object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out ${
+                        className={`object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500 ease-out ${
                           isLoaded ? "opacity-100" : "opacity-0"
                         }`}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -311,6 +314,7 @@ const Hobby = () => {
                         placeholder="blur"
                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRWp9Dq/U6jKfs8w=="
                       />
+                      {/* The rest of your overlays and text elements are fine as they are */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
