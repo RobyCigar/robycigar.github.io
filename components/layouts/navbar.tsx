@@ -46,14 +46,6 @@ export const items: MenuI[] = [
     ),
   },
   {
-    label: "Gallery",
-    desc: "Kumpulan media foto/video",
-    link: "/gallery",
-    icon: (
-      <PhotoIcon className="w-6 h-6 text-gray-400 hover:text-gray-600 cursor-pointer" />
-    ),
-  },
-  {
     label: "Friends",
     desc: "List teman",
     link: "/friends",
@@ -395,7 +387,7 @@ function Navbar() {
         open={data.commandPalleteOpen}
         setOpen={toggleCommandPallete}
       />
-      <header className="fixed z-10 w-screen">
+      <header className="sticky top-0 z-[99999] w-screen">
         <nav className="backdrop-blur-sm w-full bg-gray-50 shadow border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div className="flex items-stretch space-x-8">
@@ -455,8 +447,6 @@ function Navbar() {
         onClose={toggleBurger}
         items={items}
       />
-      {/* as filler */}
-      <div className="invisible h-14"></div>
     </>
   );
 }

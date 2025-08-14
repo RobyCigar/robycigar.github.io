@@ -1,12 +1,14 @@
 import React, { useEffect, useCallback } from "react";
 import Image from "next/image";
 
+// --- MODIFICATION 1: ADD 'type' PROP ---
 interface ImageModalProps {
   src: string;
+  type: "image" | "video";
   onClose: () => void;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ src, onClose }) => {
+const ImageModal: React.FC<ImageModalProps> = ({ src, type, onClose }) => {
   // Handle escape key
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
@@ -44,18 +46,32 @@ const ImageModal: React.FC<ImageModalProps> = ({ src, onClose }) => {
       className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
       onClick={handleBackdropClick}
     >
-      <div className="relative max-w-4xl max-h-full">
-        <Image
-          src={src}
-          alt="Gallery image"
-          width={1200}
-          height={800}
-          className="max-w-full max-h-full object-contain rounded-lg animate-in zoom-in-95 duration-300"
-          quality={40}
-          priority
-        />
+      {/* --- MODIFICATION 2: CONDITIONAL RENDERING --- */}
+      <div className="relative max-w-4xl max-h-[90vh] w-auto">
+        {type === "image" ? (
+          <Image
+            src={src}
+            alt="Gallery image"
+            width={1200}
+            height={800}
+            // Use h-auto and max-h to respect viewport height
+            className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg animate-in zoom-in-95 duration-300"
+            quality={90} // Increased quality for better modal view
+            priority
+          />
+        ) : (
+          <video
+            src={src}
+            controls
+            autoPlay
+            // Use similar classes for consistent sizing
+            className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg animate-in zoom-in-95 duration-300"
+          >
+            Browser Anda tidak mendukung tag video.
+          </video>
+        )}
         <button
-          className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-200"
+          className="absolute -top-2 -right-2 md:top-4 md:right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-200"
           onClick={onClose}
           aria-label="Close modal"
         >
