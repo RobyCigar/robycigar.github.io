@@ -76,7 +76,7 @@ const timelines = [
     subtitle: ``,
     description: `
       I've been focusing on self-growth, exploring new ideas, and continuing to build and learn through side projects. 
-      I'm also growing my presence as a content creator on Instagram and TikTok, where I’ve built an audience of 10K+ followers and 100Million+ Views by sharing my journey and passions.
+      I'm also growing my presence as a content creator on Instagram and TikTok, where I’ve built an audience of 10K+ followers and 100M+ views by sharing my journey and passions.
     `,
     date: "July 2024 - Present",
     tech: [],
