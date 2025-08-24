@@ -1,15 +1,15 @@
 ---
-title: "How I Created Controversy and Gained Over 50 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content"
+title: "How I Created Controversy and Gained Over 100 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content"
 date: "2025-05-15"
-desc: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 20M+ views on Instagram and TikTok—while ignoring the hate and focusing on real connections."
-tags: "personal branding, content strategy, controversial marketing, fitness, tiktok growth"
+excerpt: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 20M+ views on Instagram and TikTok—while ignoring the hate and focusing on real connections."
+tags: ["personal branding", "content strategy", "controversial marketing", "fitness", "tiktok growth"]
 ---
 
-## How I Created Controversy and Gained Over 50 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content
+## How I Created Controversy and Gained Over 100 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content
 
 Controversy sells. That’s not a theory—it’s a fact I’ve proven through my own journey as a content creator on Instagram and TikTok.
 
-In this article, I want to break down exactly how I generated over **50 million views** by deliberately crafting polarizing opinions in the **fitness and lifestyle** niche, specifically by challenging a popular belief: that playing sports is better than exercising at the gym.
+In this article, I want to break down exactly how I generated over **100 million views** by deliberately crafting polarizing opinions in the **fitness and lifestyle** niche, specifically by challenging a popular belief: that playing sports is better than exercising at the gym.
 
 And no, I didn’t do it just to provoke people. I had a plan. A long-term branding strategy that focused on:
 - Knowing **who to trigger**
@@ -80,7 +80,7 @@ And I made sure I never crossed that line.
 
 Did my content piss off some people? Absolutely.  
 Did it break any rules? Nope.  
-Did it work? Hell yes—**50M+ views don’t lie**.
+Did it work? Hell yes—**100M+ views don’t lie**.
 
 ---
 
@@ -167,4 +167,4 @@ And remember:
 
 > **Not everyone needs to like you—but the right people will love you.**
 
-See you at the next 50 million views.
+See you at the next 100 million views.
