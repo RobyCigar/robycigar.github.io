@@ -104,20 +104,6 @@ const Hobby = () => {
     () => [
       {
         type: "image",
-        src: "/assets/gallery/compressed/1.jpeg",
-        alt: "Fun Trail Run Session",
-        title: "Trail Run Session",
-        description: "Running through the trails with friends",
-      },
-      // {
-      //   type: "image",
-      //   src: "/assets/gallery/compressed/2.jpeg",
-      //   alt: "Fun Trail Run Session",
-      //   title: "Trail Run Session",
-      //   description: "Running through the trails with friends",
-      // },
-      {
-        type: "image",
         src: "/assets/gallery/compressed/3.jpeg",
         alt: "Fun Trail Run Session",
         title: "Trail Run Session",
