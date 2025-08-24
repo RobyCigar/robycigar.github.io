@@ -1,7 +1,7 @@
 ---
 title: "How I Created Controversy and Gained Over 100 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content"
 date: "2025-05-15"
-excerpt: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 20M+ views on Instagram and TikTok—while ignoring the hate and focusing on real connections."
+excerpt: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 100M+ views on Instagram and TikTok—while ignoring the hate and focusing on real connections."
 tags: ["personal branding", "content strategy", "controversial marketing", "fitness", "tiktok growth"]
 ---
 
