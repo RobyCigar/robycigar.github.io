@@ -277,31 +277,21 @@ img {
 
       <hr>
 
-      <div class="blog-item">
-        <h3>June 6, 2025: Drama Antara Elon Musk dan Donald Trump</h3>
-        <p>Analisis mendalam tentang perpecahan antara Elon Musk dan Donald Trump, dari sekutu politik hingga pertikaian publik.</p>
-        <p><span class="tag">Elon Musk</span> <span class="tag">Donald Trump</span> <span class="tag">politik</span></p>
+      <div id="blog-container">
+        <!-- Blog items will be inserted here by JavaScript -->
       </div>
 
-      <div class="blog-item">
-        <h3>May 15, 2025: How I Created Controversy and Gained Over 50 Million Views</h3>
-        <p>Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 50M+ views on Instagram and TikTok.</p>
-        <p><span class="tag">personal branding</span> <span class="tag">content strategy</span> <span class="tag">fitness</span></p>
-      </div>
-
-      <div class="blog-item">
-        <h3>March 7, 2025: Choosing Life Over Money</h3>
-        <p>Working in an office meant sitting at a desk for eight hours a day, staring at a computer screen. I realized: health isn't just about eating right or exercising—it's about how you spend your time every day.</p>
-        <p><span class="tag">life</span> <span class="tag">Lesson</span></p>
-      </div>
-
-      <p><a href="#">Previous</a> | <b>1</b> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> | <a href="#">Next</a></p>
+      <p id="pagination">
+        <a href="#" id="prev-btn">Previous</a> | 
+        <span id="page-numbers"></span> | 
+        <a href="#" id="next-btn">Next</a>
+      </p>
     </div>
   </div>
 
   <footer>
     <p>© 2025 RabihUtomo.com - Best viewed in Netscape Navigator</p>
-    <!-- <p class="blink">*** VISITOR COUNTER: 000042 ***</p> -->
+    <p class="blink">*** VISITOR COUNTER: 000042 ***</p>
   </footer>
 </div>
 
@@ -317,6 +307,171 @@ document.querySelectorAll('nav a').forEach(link => {
     }
   });
 });
+
+// Blog data
+const blogPosts = [
+  {
+    date: "June 6, 2025",
+    title: "Drama Antara Elon Musk dan Donald Trump",
+    desc: "Analisis mendalam tentang perpecahan antara Elon Musk dan Donald Trump, dari sekutu politik hingga pertikaian publik.",
+    tags: ["Elon Musk", "Donald Trump", "politik"]
+  },
+  {
+    date: "May 15, 2025",
+    title: "How I Created Controversy and Gained Over 50 Million Views",
+    desc: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 50M+ views on Instagram and TikTok.",
+    tags: ["personal branding", "content strategy", "fitness"]
+  },
+  {
+    date: "March 7, 2025",
+    title: "Choosing Life Over Money",
+    desc: "Working in an office meant sitting at a desk for eight hours a day, staring at a computer screen. I realized: health isn't just about eating right or exercising—it's about how you spend your time every day.",
+    tags: ["life", "Lesson"]
+  },
+  {
+    date: "February 20, 2025",
+    title: "My Journey Learning GraphQL",
+    desc: "How I mastered GraphQL in 3 months and why it changed my approach to API development.",
+    tags: ["coding", "tech", "GraphQL"]
+  },
+  {
+    date: "January 15, 2025",
+    title: "Building a Profitable Side Business",
+    desc: "Lessons learned from creating and scaling my candle company ERP system.",
+    tags: ["business", "finance"]
+  },
+  {
+    date: "December 10, 2024",
+    title: "Why I Left My 9-5 Job",
+    desc: "The decision that changed my life forever and how I prepared for it financially.",
+    tags: ["life", "business", "finance"]
+  },
+  {
+    date: "November 5, 2024",
+    title: "Docker Best Practices for Small Teams",
+    desc: "Practical tips for implementing Docker in your development workflow.",
+    tags: ["tech", "coding", "Docker"]
+  },
+  {
+    date: "October 15, 2024",
+    title: "My Weightlifting Progress: From 60kg to 110kg",
+    desc: "A year of consistent training and the lessons I learned along the way.",
+    tags: ["life", "fitness"]
+  },
+  {
+    date: "September 1, 2024",
+    title: "Content Creation Tips for Developers",
+    desc: "How I grew my social media to 10K+ followers while working full-time.",
+    tags: ["business", "personal branding"]
+  },
+  {
+    date: "August 12, 2024",
+    title: "Vue vs React: My Personal Experience",
+    desc: "After working with both frameworks professionally, here's what I think.",
+    tags: ["coding", "tech"]
+  }
+];
+
+// Pagination variables
+let currentPage = 1;
+const postsPerPage = 3;
+const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+// Render blog posts
+function renderBlog() {
+  const container = document.getElementById('blog-container');
+  container.innerHTML = '';
+  
+  const start = (currentPage - 1) * postsPerPage;
+  const end = start + postsPerPage;
+  const postsToShow = blogPosts.slice(start, end);
+  
+  postsToShow.forEach(post => {
+    const item = document.createElement('div');
+    item.className = 'blog-item';
+    item.innerHTML = `
+      <h3>${post.date}: ${post.title}</h3>
+      <p>${post.desc}</p>
+      <p>${post.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</p>
+    `;
+    container.appendChild(item);
+  });
+  
+  renderPagination();
+}
+
+// Render pagination
+function renderPagination() {
+  const pageNumbers = document.getElementById('page-numbers');
+  let html = '';
+  
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === currentPage) {
+      html += `<b>${i}</b> `;
+    } else {
+      html += `<a href="#" class="page-link" data-page="${i}">${i}</a> `;
+    }
+  }
+  
+  pageNumbers.innerHTML = html;
+  
+  // Add event listeners to page links
+  document.querySelectorAll('.page-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      currentPage = parseInt(this.getAttribute('data-page'));
+      renderBlog();
+      document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  
+  // Update prev/next buttons
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  
+  if (currentPage === 1) {
+    prevBtn.style.color = '#888';
+    prevBtn.style.textDecoration = 'none';
+    prevBtn.style.cursor = 'default';
+  } else {
+    prevBtn.style.color = '#00f';
+    prevBtn.style.textDecoration = 'underline';
+    prevBtn.style.cursor = 'pointer';
+  }
+  
+  if (currentPage === totalPages) {
+    nextBtn.style.color = '#888';
+    nextBtn.style.textDecoration = 'none';
+    nextBtn.style.cursor = 'default';
+  } else {
+    nextBtn.style.color = '#00f';
+    nextBtn.style.textDecoration = 'underline';
+    nextBtn.style.cursor = 'pointer';
+  }
+}
+
+// Previous button
+document.getElementById('prev-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (currentPage > 1) {
+    currentPage--;
+    renderBlog();
+    document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+// Next button
+document.getElementById('next-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderBlog();
+    document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+// Initial render
+renderBlog();
 </script>
 
 </body>
