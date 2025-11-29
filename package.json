@@ -25,6 +25,7 @@
     "eslint-config-next": "13.4.7",
     "framer-motion": "^10.18.0",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.474.0",
     "marked": "^5.1.2",
     "next": "^15.1.3",

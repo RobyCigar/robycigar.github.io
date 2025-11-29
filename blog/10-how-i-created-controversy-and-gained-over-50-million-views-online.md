@@ -3,7 +3,7 @@ title: "How I Created Controversy and Gained Over 50 Million Views Online by Tar
 date: "2025-05-15"
 excerpt: "Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 50M+ views on Instagram and TikTok—while ignoring the hate and focusing on real connections."
 tags: ["personal branding", "content strategy", "controversial marketing", "fitness", "tiktok growth"]
----
+--- 
 
 ## How I Created Controversy and Gained Over 50 Million Views Online by Targeting the Right Audience with Polarizing Fitness Content
 

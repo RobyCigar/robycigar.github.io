@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RabihUtomo - Personal Website</title>
+<style>
+body {
+  background: #c0c0c0;
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 20px;
+  color: #000;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 3px solid #000;
+  padding: 0;
+}
+
+header {
+  background: #000080;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav {
+  background: #c0c0c0;
+  border-bottom: 2px solid #000;
+  padding: 5px;
+}
+
+nav a {
+  color: #00f;
+  text-decoration: underline;
+  margin: 0 10px;
+}
+
+nav a:visited {
+  color: #800080;
+}
+
+.content {
+  padding: 15px;
+}
+
+.section {
+  border: 2px solid #000;
+  margin: 15px 0;
+  padding: 10px;
+  background: #fff;
+}
+
+.section h2 {
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  margin: -10px -10px 10px -10px;
+  font-size: 18px;
+}
+
+.hobby-item, .portfolio-item, .friend-item, .blog-item {
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 10px 0;
+  background: #f0f0f0;
+}
+
+.photo-gallery {
+  display: block;
+}
+
+.photo-item {
+  border: 1px solid #000;
+  padding: 5px;
+  margin: 5px 0;
+  background: #fff;
+}
+
+.experience-item {
+  border-left: 3px solid #000;
+  padding-left: 10px;
+  margin: 15px 0;
+}
+
+.tag {
+  background: #ffff00;
+  border: 1px solid #000;
+  padding: 2px 5px;
+  margin: 2px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+footer {
+  background: #000080;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blink {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+hr {
+  border: 1px solid #000;
+}
+
+img {
+  max-width: 100%;
+  border: 2px solid #000;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>*** RABIHUTOMO.COM ***</h1>
+    <p>Welcome to my personal website!</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a> |
+    <a href="#hobbies">Hobbies</a> |
+    <a href="#portfolio">Portfolio</a> |
+    <a href="#experience">Experience</a> |
+    <a href="#friends">Friends</a> |
+    <a href="#blog">Blog</a>
+  </nav>
+
+  <div class="content">
+    <div id="home" class="section">
+      <h2>ABOUT ME</h2>
+      <p><b>Name:</b> Rabih Utomo</p>
+      <p><b>Profession:</b> Fullstack Engineer & Content Creator</p>
+      <p><b>Status:</b> Self-Employed</p>
+      <p><b>Followers:</b> 10K+ on Instagram & TikTok</p>
+      <p><b>Total Views:</b> 100M+</p>
+      <p class="blink">*** GET IN TOUCH ***</p>
+    </div>
+
+    <div id="hobbies" class="section">
+      <h2>HOBBIES & THINGS I LIKE</h2>
+      
+      <div class="hobby-item">
+        <h3>Shiey Inspiration</h3>
+        <p>Shiey is a man who inspired me to explore places</p>
+      </div>
+
+      <div class="hobby-item">
+        <h3>Weightlifting</h3>
+        <p>I do weightlifting to keep my body sane</p>
+      </div>
+
+      <div class="hobby-item">
+        <h3>Beautiful Voice</h3>
+        <p>Her voice is so pretty</p>
+      </div>
+
+      <hr>
+
+      <h3>PHOTO GALLERY (8 photos)</h3>
+      <div class="photo-gallery">
+        <div class="photo-item">1. Trail Run Session - Running through the trails with friends</div>
+        <div class="photo-item">2. Photoshoot - A photoshoot of me</div>
+        <div class="photo-item">3. Date with Girlfriend - A date with my girlfriend</div>
+        <div class="photo-item">4. Liburan di Malioboro - Liburan di Malioboro bersama teman-teman</div>
+        <div class="photo-item">5. Liburan di Pantai Jogja - Liburan di Pantai Jogja bersama teman-teman</div>
+        <div class="photo-item">6. Liburan di Pantai Jogja - Liburan di Pantai Jogja bersama teman-teman</div>
+        <div class="photo-item">7. 110kg Deadlift - Berhasil mengangkat beban 110kg</div>
+        <div class="photo-item">8. Family Time - Spending quality time with family at malioboro</div>
+      </div>
+    </div>
+
+    <div id="portfolio" class="section">
+      <h2>PORTFOLIO</h2>
+      <p>A curated list of notable work I have accomplished during my programming career.</p>
+
+      <div class="portfolio-item">
+        <h3>Marketing Apps for Candle Company</h3>
+        <p><span class="tag">MVP</span> <span class="tag">Private Project</span></p>
+        <p>I have developed an ERP website for a candle company with the aim of generating revenue through online marketing.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Personal Projects</h3>
+        <p><span class="tag">Public Access</span></p>
+        <p>During my free time, sometimes I learn new things in order to keep track my learning progress.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Tons of Projects</h3>
+        <p><span class="tag">Company Project</span></p>
+        <p>Actually I had tons of projects but too lazy to put in here</p>
+      </div>
+
+      <div class="portfolio-item">
+        <h3>Jiwaku App</h3>
+        <p><span class="tag">Public Access</span></p>
+        <p>Mental health apps, mobile platform, available on google play</p>
+      </div>
+    </div>
+
+    <div id="experience" class="section">
+      <h2>WORK EXPERIENCE & EDUCATION</h2>
+      <p>Berikut ini adalah daftar perjuangan saya dalam menitih karir di bidang pemrograman</p>
+
+      <div class="experience-item">
+        <h3>July 2024 - Present: Self-Employed</h3>
+        <p>I've been focusing on self-growth, exploring new ideas, and continuing to build and learn through side projects. I'm also growing my presence as a content creator on Instagram and TikTok, where I've built an audience of 10K+ followers and 100M+ views by sharing my journey and passions.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>July 2023 - June 2024: Prioritas Web Teknologi (Fullstack Engineer)</h3>
+        <p>After a year of hard work, I've got a promotion to a Fullstack role!</p>
+        <p>Tech: Docker, Laravel, GraphQL, PHP, MySQL, WebSocket</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>July 2022 - July 2023: Prioritas Web Teknologi (Frontend Engineer)</h3>
+        <p>Prioritas Web Teknologi is a software development company dedicated to creating innovative and cutting-edge software applications.</p>
+        <p>Tech: Vue 2 & 3, Vuex, Pinia, Jira, Docker, TypeScript</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>2021 - 2022: Lingotalk (Frontend Engineer)</h3>
+        <p>Working remotely on web development projects.</p>
+        <p>Tech: Svelte, ReactJS, NextJS, Gitlab, Figma, MS Teams, Trello</p>
+      </div>
+    </div>
+
+    <div id="friends" class="section">
+      <h2>LIST OF FRIENDS</h2>
+      <p>I've got some really cool friends. These folks have been there for me, always ready to lend a hand, offer advice, and share their skills and expertise.</p>
+
+      <div class="friend-item">
+        <h3>Pak Yohan</h3>
+        <p>Sr Devops</p>
+      </div>
+
+      <div class="friend-item">
+        <h3>Mas Frenki</h3>
+        <p>Sr Backend Engineer</p>
+      </div>
+
+      <div class="friend-item">
+        <h3>All of My Friends</h3>
+        <p>at work</p>
+      </div>
+
+      <div class="friend-item">
+        <h3>Teman-teman pejuang sakit kronis</h3>
+        <p>at life</p>
+      </div>
+    </div>
+
+    <div id="blog" class="section">
+      <h2>BLOG</h2>
+      <p>I write about my journey as a full-time maker. Sharing insights, stories, and experiences from my personal and professional life.</p>
+      <p><b>Categories:</b> All | Life | Coding | Business | Finance | Tech</p>
+
+      <hr>
+
+      <div class="blog-item">
+        <h3>June 6, 2025: Drama Antara Elon Musk dan Donald Trump</h3>
+        <p>Analisis mendalam tentang perpecahan antara Elon Musk dan Donald Trump, dari sekutu politik hingga pertikaian publik.</p>
+        <p><span class="tag">Elon Musk</span> <span class="tag">Donald Trump</span> <span class="tag">politik</span></p>
+      </div>
+
+      <div class="blog-item">
+        <h3>May 15, 2025: How I Created Controversy and Gained Over 50 Million Views</h3>
+        <p>Learn how I leveraged polarizing opinions in fitness and lifestyle content to go viral with over 50M+ views on Instagram and TikTok.</p>
+        <p><span class="tag">personal branding</span> <span class="tag">content strategy</span> <span class="tag">fitness</span></p>
+      </div>
+
+      <div class="blog-item">
+        <h3>March 7, 2025: Choosing Life Over Money</h3>
+        <p>Working in an office meant sitting at a desk for eight hours a day, staring at a computer screen. I realized: health isn't just about eating right or exercising—it's about how you spend your time every day.</p>
+        <p><span class="tag">life</span> <span class="tag">Lesson</span></p>
+      </div>
+
+      <p><a href="#">Previous</a> | <b>1</b> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> | <a href="#">Next</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 RabihUtomo.com - Best viewed in Netscape Navigator</p>
+    <!-- <p class="blink">*** VISITOR COUNTER: 000042 ***</p> -->
+  </footer>
+</div>
+
+<script>
+// Simple navigation scroll
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
